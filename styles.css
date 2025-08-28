@@ -612,6 +612,12 @@ h3 {
     align-items: center;
     justify-content: center;
     margin-top: 80px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.geometric-hero.visible{
+    opacity:1;
 }
 
 .geometric-shape {
@@ -628,6 +634,15 @@ h3 {
     max-height: 100%;
     object-fit: contain;
     filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.3));
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 1.5s ease;
+    transition-delay: 0.3s;
+}
+
+.geometric-hero.visible .shape-image {
+    opacity: 1;
+    transform: scale(1);
 }
 
 
@@ -644,6 +659,13 @@ h3 {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    transition-delay: 0.5s;
+}
+
+.hero.visible {
+    opacity: 1;
 }
 
 .hero::before {
@@ -663,6 +685,15 @@ h3 {
     padding: 0 4rem;
     position: relative;
     z-index: 3;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1.2s ease;
+    transition-delay: 0.8s;
+}
+
+.hero.visible .hero-content {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-content h1 {

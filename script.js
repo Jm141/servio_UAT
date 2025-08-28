@@ -1,13 +1,29 @@
 // Splash Screen Management
 document.addEventListener('DOMContentLoaded', function() {
     const splashScreen = document.getElementById('splashScreen');
+    const geometricHero = document.querySelector('.geometric-hero');
+    const heroSection = document.querySelector('.hero');
     
     // Hide splash screen after 6 seconds (allowing writing animations to complete)
     setTimeout(() => {
         splashScreen.classList.add('fade-out');
-        // Remove splash screen from DOM after slash animation completes
+        
+        // After splashscreen fade-out animation completes, fade in the geometric-hero
         setTimeout(() => {
+            // Remove splash screen from DOM
             splashScreen.remove();
+            
+            // Fade in the geometric-hero section
+            if (geometricHero) {
+                geometricHero.classList.add('visible');
+            }
+            
+            // Fade in the hero section after a short delay
+            setTimeout(() => {
+                if (heroSection) {
+                    heroSection.classList.add('visible');
+                }
+            }, 1000); // 1 second delay after geometric-hero starts fading in
         }, 1500);
     }, 6000);
 });
