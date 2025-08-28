@@ -35,7 +35,7 @@
     align-items: center;
     justify-content: center;
     z-index: 10000;
-    transition: transform 1.2s ease;
+    transition: transform .5s ease;
     overflow: hidden;
     border: 1px solid #f0f0f0;
 }
@@ -137,18 +137,20 @@
 .char:nth-child(35) { animation-delay: 2.9s; }
 
 /* Slash cutting elements */
+
 .splash-cut-left {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    background: linear-gradient(135deg, #207443 0%, #2ecc71 100%);
     clip-path: polygon(0 0, 100% 0, 0 100%);
-    transform: translateX(-100%) rotate(-45deg);
+    transform: translateX(0) rotate(-45deg); /* Make visible in background */
     transition: all 1.2s ease;
-    z-index: 1;
+    z-index: 2;
 }
+
 
 .splash-cut-right {
     position: absolute;
@@ -158,17 +160,17 @@
     height: 100%;
     background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
-    transform: translateX(100%) rotate(45deg);
+    transform: translateX(0) rotate(45deg); /* Make visible in background */
     transition: all 1.2s ease;
-    z-index: 1;
+    z-index: 2;
 }
 
 .splash-screen.fade-out .splash-cut-left {
-    transform: translateX(-200%) rotate(-45deg);
+    transform: translate(-100%, 100%) rotate(-45deg);
 }
 
 .splash-screen.fade-out .splash-cut-right {
-    transform: translateX(200%) rotate(45deg);
+    transform: translate(100%, 100%) rotate(45deg);
 }
 
 .splash-message {
@@ -201,7 +203,7 @@
     height: 100%;
     background: white;
     border-radius: 2px;
-    animation: loadingProgress 3s ease 2.5s forwards;
+    animation: loadingProgress 2s ease 1.5s forwards;
 }
 
 @keyframes letterWrite {
@@ -367,8 +369,9 @@ h1 {
 
 h2 {
     font-size: 2.5rem;
+   
     margin-bottom: 2rem;
-    text-align: left;
+    text-align: center;
     color: #1a1a1a;
     letter-spacing: -0.5px;
 }
@@ -391,7 +394,7 @@ h3 {
     transition: all 0.3s ease;
     font-size: 1rem;
     letter-spacing: 0.5px;
-    min-height: 48px; /* Better touch target for mobile */
+    min-height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -611,8 +614,8 @@ h3 {
 }
 
 .geometric-shape {
-    width: 800px;
-    height: 800px;
+    width: 900px;
+    height: 900px;
     position: relative;
     display: flex;
     align-items: center;
