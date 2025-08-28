@@ -184,31 +184,31 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Add click event listeners to all buttons for demo purposes
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
+// // Add click event listeners to all buttons for demo purposes
+// document.querySelectorAll('.btn').forEach(button => {
+//     button.addEventListener('click', function(e) {
+//         e.preventDefault();
         
-        // Get button text to show appropriate message
-        const buttonText = this.textContent.trim();
+//         // Get button text to show appropriate message
+//         const buttonText = this.textContent.trim();
         
-        if (buttonText.includes('Assessment') || buttonText.includes('Book')) {
-            alert('Thank you for your interest! Our team will contact you within 24 hours to schedule your free assessment.');
-        } else if (buttonText.includes('Action') || buttonText.includes('Demo') || buttonText.includes('Services')) {
-            alert('Great choice! We\'ll arrange a personalized demo of our solutions for your organization.');
-        } else if (buttonText.includes('Training') || buttonText.includes('Network')) {
-            alert('Excellent! Our training team will reach out to discuss your team\'s learning needs.');
-        } else if (buttonText.includes('Toolkit') || buttonText.includes('Download')) {
-            alert('Your digital transformation toolkit is being prepared. Check your email shortly!');
-        } else if (buttonText.includes('Community') || buttonText.includes('Partner')) {
-            alert('Thank you for wanting to join our movement! We\'ll connect you with our community team.');
-        } else if (buttonText.includes('Build') || buttonText.includes('Together')) {
-            alert('Amazing! Let\'s build the digital countryside together. Our team will contact you within 24 hours.');
-        } else {
-            alert('Thank you for your interest! We\'ll be in touch soon.');
-        }
-    });
-});
+//         if (buttonText.includes('Assessment') || buttonText.includes('Book')) {
+//             alert('Thank you for your interest! Our team will contact you within 24 hours to schedule your free assessment.');
+//         } else if (buttonText.includes('Action') || buttonText.includes('Demo') || buttonText.includes('Services')) {
+//             alert('Great choice! We\'ll arrange a personalized demo of our solutions for your organization.');
+//         } else if (buttonText.includes('Training') || buttonText.includes('Network')) {
+//             alert('Excellent! Our training team will reach out to discuss your team\'s learning needs.');
+//         } else if (buttonText.includes('Toolkit') || buttonText.includes('Download')) {
+//             alert('Your digital transformation toolkit is being prepared. Check your email shortly!');
+//         } else if (buttonText.includes('Community') || buttonText.includes('Partner')) {
+//             alert('Thank you for wanting to join our movement! We\'ll connect you with our community team.');
+//         } else if (buttonText.includes('Build') || buttonText.includes('Together')) {
+//             alert('Amazing! Let\'s build the digital countryside together. Our team will contact you within 24 hours.');
+//         } else {
+//             alert('Thank you for your interest! We\'ll be in touch soon.');
+//         }
+//     });
+// });
 
 // Add hover effects to cards
 document.querySelectorAll('.serve-card, .feature-card, .testimonial, .tool-card, .involvement-card').forEach(card => {
@@ -383,10 +383,7 @@ window.addEventListener('scroll', () => {
 
     console.log('Servio - Empowering the Digital Countryside loaded successfully! 🌱🚀');
     
-    // Add test button for debugging fade-in
-    const testButton = document.createElement('button');
-    testButton.textContent = 'Test Fade-In';
-    testButton.style.cssText = 'position: fixed; top: 10px; right: 10px; z-index: 10000; padding: 10px; background: red; color: white; border: none; cursor: pointer;';
+
     testButton.addEventListener('click', () => {
         console.log('Manual test button clicked');
         const geometricHero = document.querySelector('.geometric-hero');
