@@ -10,6 +10,14 @@
     list-style: none;
 }
 
+.hero-bullets li {
+    text-decoration: none;
+}
+
+.hero-bullets .highlight {
+    text-decoration: none;
+}
+
 /* Justify hero subtitle text */
 .hero-subtitle {
     text-align: justify;
@@ -691,12 +699,7 @@ h3 {
 }
 
 .hero-bullets li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #007bff;
-    font-size: 2rem;
-    font-weight: bold;
+    content: none;
 }
 
 .hero-bullets .highlight {
