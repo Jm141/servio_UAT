@@ -5,6 +5,16 @@
     box-sizing: border-box;
 }
 
+/* Remove bullets from hero bullets list */
+.hero-bullets {
+    list-style: none;
+}
+
+/* Justify hero subtitle text */
+.hero-subtitle {
+    text-align: justify;
+}
+
 /* Splash Screen */
 .splash-screen {
     position: fixed;
