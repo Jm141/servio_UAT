@@ -145,8 +145,9 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #207443 0%, #2ecc71 100%);
-    clip-path: polygon(0 0, 100% 0, 0 100%);
-    transform: translateX(0) rotate(-45deg); /* Make visible in background */
+    /* clip-path: polygon(0 0, 100% 0, 0 100%); */
+    clip-path: polygon(0 100%, 0 0, 100% 0);
+    transform: translateX(0) rotate(-180deg); /* Make visible in background */
     transition: all 1.2s ease;
     z-index: 2;
 }
@@ -160,17 +161,17 @@
     height: 100%;
     background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
-    transform: translateX(0) rotate(45deg); /* Make visible in background */
+    transform: translateX(0) rotate(180deg); /* Make visible in background */
     transition: all 1.2s ease;
     z-index: 2;
-}
+} 
 
 .splash-screen.fade-out .splash-cut-left {
-    transform: translate(-100%, 100%) rotate(-45deg);
+    transform: translate(100%, 100%) rotate(-180deg);
 }
 
 .splash-screen.fade-out .splash-cut-right {
-    transform: translate(100%, 100%) rotate(45deg);
+    transform: translate(-100%, -100%) rotate(180deg);
 }
 
 .splash-message {
