@@ -4,28 +4,57 @@ document.addEventListener('DOMContentLoaded', function() {
     const geometricHero = document.querySelector('.geometric-hero');
     const heroSection = document.querySelector('.hero');
     
-    // Hide splash screen after 6 seconds (allowing writing animations to complete)
+    console.log('Elements found:', { splashScreen, geometricHero, heroSection });
+    
+    // Ensure elements start completely hidden
+    if (geometricHero) {
+        geometricHero.style.opacity = '0';
+        geometricHero.style.transform = 'scale(0.95)';
+        geometricHero.style.visibility = 'hidden';
+        geometricHero.style.pointerEvents = 'none';
+        console.log('Set geometric-hero to hidden state');
+    }
+    
+    if (heroSection) {
+        heroSection.style.opacity = '0';
+        heroSection.style.transform = 'translateY(20px)';
+        heroSection.style.visibility = 'hidden';
+        heroSection.style.pointerEvents = 'none';
+        console.log('Set hero section to hidden state');
+    }
+    
+    // Hide splash screen after 4.1 seconds (1.5s after SERVIO letters finish animating)
     setTimeout(() => {
+        console.log('Starting splashscreen fade-out...');
         splashScreen.classList.add('fade-out');
         
         // After splashscreen fade-out animation completes, fade in the geometric-hero
         setTimeout(() => {
+            console.log('Removing splashscreen and starting fade-ins...');
             // Remove splash screen from DOM
             splashScreen.remove();
             
             // Fade in the geometric-hero section
             if (geometricHero) {
+                console.log('Adding visible class to geometric-hero...');
                 geometricHero.classList.add('visible');
+                console.log('Geometric-hero classes:', geometricHero.className);
+            } else {
+                console.error('Geometric-hero element not found!');
             }
             
             // Fade in the hero section after a short delay
             setTimeout(() => {
                 if (heroSection) {
+                    console.log('Adding visible class to hero section...');
                     heroSection.classList.add('visible');
+                    console.log('Hero section classes:', heroSection.className);
+                } else {
+                    console.error('Hero section element not found!');
                 }
             }, 1000); // 1 second delay after geometric-hero starts fading in
         }, 1500);
-    }, 6000);
+    }, 4100);
 });
 
 // Scroll Animation Observer
@@ -150,11 +179,12 @@ document.querySelectorAll('.serve-card, .feature-card, .testimonial, .tool-card,
     });
 });
 
-// Add parallax effect to hero section
+// Add parallax effect to hero section - DISABLED for splashscreen fade-in
 window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
-    if (hero) {
+    if (hero && !hero.classList.contains('visible')) {
+        // Only apply parallax if hero section is not yet visible from splashscreen
         const rate = scrolled * -0.5;
         hero.style.transform = `translateY(${rate}px)`;
     }
@@ -194,7 +224,7 @@ document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
     });
 });
 
-// Intersection Observer for animations (optional enhancement)
+// Intersection Observer for animations (optional enhancement) - DISABLED for splashscreen fade-in
 if ('IntersectionObserver' in window) {
     const observerOptions = {
         threshold: 0.1,
@@ -204,18 +234,23 @@ if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                // Skip sections that are already visible from splashscreen
+                if (!entry.target.classList.contains('geometric-hero') && !entry.target.classList.contains('hero')) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             }
         });
     }, observerOptions);
     
-    // Observe all sections for fade-in effect
+    // Observe all sections for fade-in effect (excluding geometric-hero and hero)
     document.querySelectorAll('section').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
+        if (!section.classList.contains('geometric-hero') && !section.classList.contains('hero')) {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        }
     });
 }
 
@@ -300,4 +335,39 @@ window.addEventListener('scroll', () => {
     }
 });
 
-console.log('Servio - Empowering the Digital Countryside loaded successfully! 🌱🚀');
+    console.log('Servio - Empowering the Digital Countryside loaded successfully! 🌱🚀');
+    
+    // Add test button for debugging fade-in
+    const testButton = document.createElement('button');
+    testButton.textContent = 'Test Fade-In';
+    testButton.style.cssText = 'position: fixed; top: 10px; right: 10px; z-index: 10000; padding: 10px; background: red; color: white; border: none; cursor: pointer;';
+    testButton.addEventListener('click', () => {
+        console.log('Manual test button clicked');
+        const geometricHero = document.querySelector('.geometric-hero');
+        const heroSection = document.querySelector('.hero');
+        
+        if (geometricHero) {
+            console.log('Manually adding visible class to geometric-hero');
+            geometricHero.classList.add('visible');
+            // Force the styles with inline CSS to override any conflicts
+            geometricHero.style.opacity = '1';
+            geometricHero.style.transform = 'scale(1)';
+            geometricHero.style.visibility = 'visible';
+            geometricHero.style.pointerEvents = 'auto';
+            console.log('Applied inline styles to geometric-hero');
+        }
+        
+        setTimeout(() => {
+            if (heroSection) {
+                console.log('Manually adding visible class to hero section');
+                heroSection.classList.add('visible');
+                // Force the styles with inline CSS to override any conflicts
+                heroSection.style.opacity = '1';
+                heroSection.style.transform = 'translateY(0)';
+                heroSection.style.visibility = 'visible';
+                heroSection.style.pointerEvents = 'auto';
+                console.log('Applied inline styles to hero section');
+            }
+        }, 1000);
+    });
+    document.body.appendChild(testButton);
