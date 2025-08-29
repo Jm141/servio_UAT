@@ -3,151 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Servio Technologies - Get in touch for digital transformation solutions for LGUs, cooperatives, and rural businesses.">
-    <title>Contact Us - Servio Technologies | Digital Solutions para sa Probinsya</title>
+    <title>Contact Servio Technologies | LGU Software Support | Philippine Business Solutions</title>
+    <meta name="description" content="Contact Servio Technologies for LGU software, cooperative management systems, SME business solutions, and Philippine digital transformation services. Get local support and consultation.">
+    <meta name="keywords" content="contact Servio, LGU software support, Philippine business consultation, cooperative software help, SME business solutions contact, local software support Philippines">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact Servio Technologies - Philippine Digital Transformation">
+    <meta property="og:description" content="Get in touch with Servio for LGU software, cooperative management, and SME business solutions. Local Philippine support and consultation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://servio.ph/contact">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="author" content="Servio Technologies">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="geo.region" content="PH">
+    <meta name="geo.placename" content="Philippines">
+    
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- HEADER -->
+    <!-- Header Navigation -->
     <header class="header">
-        <div class="header-content">
+        <nav class="nav">
             <div class="logo">
-                <span class="slash">//</span>
-                SERVIO
-                <span class="slash">//</span>
+                <a href="index.html">
+                    <img src="image/servio-logo.png" alt="Servio Technologies Logo">
+                </a>
             </div>
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav" id="main-nav">
-                <a href="index.html">Home</a>
-                <a href="#about-us">Who We Are</a>
-                <a href="index.html#tools-we-trust">Tools We Trust</a>
-                <a href="index.html#who-we-serve">Who We Serve</a>
-                <a href="index.html#what-we-do">What We Do</a>
-                <!-- <a href="index.html#why-it-matters">Why It Matters</a>
-                <a href="index.html#get-involved">Get Involved</a> -->
-                <a href="index.html#success-stories">Success Stories</a>
-                <a href="contact.html" class="active">Contact</a>
-            </nav>
-        </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <a href="index.html#services" class="nav-link">What We Do</a>
+                <a href="index.html#clients" class="nav-link">Who We Serve</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+        </nav>
     </header>
 
-    <!-- PAGE HEADER -->
+    <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <div class="header-content">
-                <h1>Contact Us</h1>
-                <p>Get in touch with us today. We're here to help and answer any questions you may have about digital transformation for the countryside.</p>
-            </div>
+            <h1>Contact Servio Technologies</h1>
+            <p>Ready to transform your operations? Let's discuss how Servio can help your LGU, cooperative, or business achieve digital excellence.</p>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact-section">
+    <!-- Main Contact Section -->
+    <section class="contact-main">
         <div class="container">
             <div class="contact-grid">
                 <!-- Contact Form -->
-                <div class="contact-form" data-aos="fade-right">
+                <div class="contact-form-section">
                     <h2>Send Us a Message</h2>
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First Name *</label>
-                                <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name *</label>
-                                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-                            </div>
-                        </div>
+                    <form class="contact-form" action="#" method="POST">
                         <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="company">Company/Organization</label>
-                            <input type="text" id="company" name="company" placeholder="Company Name">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
                         </div>
+                        
                         <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="lgu">LGU Digital Transformation</option>
-                                <option value="cooperative">Cooperative Solutions</option>
-                                <option value="sme">SME Digital Tools</option>
-                                <option value="training">IT Training Program</option>
-                                <option value="partnership">Partnership Opportunity</option>
-                                <option value="support">Technical Support</option>
+                            <label for="organization">Organization *</label>
+                            <input type="text" id="organization" name="organization" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="organization-type">Organization Type *</label>
+                            <select id="organization-type" name="organization-type" required>
+                                <option value="">Select your organization type</option>
+                                <option value="lgu">Local Government Unit (LGU)</option>
+                                <option value="cooperative">Cooperative</option>
+                                <option value="sme">Small-Medium Enterprise (SME)</option>
+                                <option value="educational">Educational Institution</option>
+                                <option value="ngo">NGO/Non-Profit</option>
+                                <option value="other">Other</option>
                             </select>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Location/Province *</label>
+                            <input type="text" id="location" name="location" placeholder="e.g., Cebu, Davao, Nueva Ecija" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service-interest">Service of Interest</label>
+                            <select id="service-interest" name="service-interest">
+                                <option value="">Select a service</option>
+                                <option value="erpnext">ERPNext Implementation</option>
+                                <option value="larksuite">LarkSuite Setup</option>
+                                <option value="lgu-automation">LGU Automation</option>
+                                <option value="cooperative-software">Cooperative Management System</option>
+                                <option value="sme-solutions">SME Business Solutions</option>
+                                <option value="training">IT Training & Consultation</option>
+                                <option value="custom-development">Custom Development</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
                         <div class="form-group">
                             <label for="message">Message *</label>
-                            <textarea id="message" name="message" placeholder="Tell us how we can help you..." rows="6" required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your digital transformation needs..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                        
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-100k">Under ₱100,000</option>
+                                <option value="100k-500k">₱100,000 - ₱500,000</option>
+                                <option value="500k-1m">₱500,000 - ₱1,000,000</option>
+                                <option value="over-1m">Over ₱1,000,000</option>
+                                <option value="discuss">Let's discuss</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="timeline">Project Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="immediate">Immediate (1-3 months)</option>
+                                <option value="short-term">Short-term (3-6 months)</option>
+                                <option value="medium-term">Medium-term (6-12 months)</option>
+                                <option value="long-term">Long-term (1+ years)</option>
+                                <option value="discuss">Let's discuss</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
                     </form>
                 </div>
-
-                <!-- Contact Information -->
-                <div class="contact-info" data-aos="fade-left">
+                
+                <!-- Contact Information Sidebar -->
+                <div class="contact-info-sidebar">
                     <h2>Get in Touch</h2>
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Phone</h3>
-                            <p>+63 (2) 8XXX XXXX</p>
-                            <p>+63 9XX XXX XXXX</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Email</h3>
-                            <a href="mailto:hello@servio.ph">hello@servio.ph</a>
-                            <a href="mailto:support@servio.ph">support@servio.ph</a>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>hello@servio.ph</p>
+                            <p>support@servio.ph</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Main Office</h3>
-                            <p>Pueblo de Panay, Roxas City, Caiz</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Business Hours</h3>
-                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p>+63 XXX XXX XXXX</p>
+                            <p>Mon-Fri: 9:00 AM - 6:00 PM</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fas fa-headset"></i>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-details">
+                            <h3>Live Chat</h3>
+                            <p>Available during business hours</p>
+                            <p>Quick responses for urgent inquiries</p>
                         </div>
-                        <div class="info-content">
-                            <h3>Emergency Support</h3>
-                            <a href="tel:+639XXXXXXXXX">+63 9XX XXX XXXX</a>
-                            <p>Available 24/7 for critical issues</p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📅</div>
+                        <div class="contact-details">
+                            <h3>Schedule a Call</h3>
+                            <p>Book a free consultation</p>
+                            <p>30-minute discovery session</p>
                         </div>
                     </div>
                 </div>
@@ -155,140 +187,126 @@
         </div>
     </section>
 
-    <!-- OFFICE LOCATIONS -->
+    <!-- Office Locations Section -->
     <section class="office-locations">
         <div class="container">
-            <h2>Our Offices</h2>
-            <p class="section-subtitle">Serving the countryside from strategic locations across the Philippines</p>
+            <h2>Our Presence Across the Philippines</h2>
             <div class="locations-grid">
-                <div class="location-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="location-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Headquarters</h3>
-                    <p>Pueblo de Panay, Roxas City, Capiz</p>
-                    <a href="#" class="btn btn-outline">Get Directions</a>
+                <div class="location-card">
+                    <div class="location-icon">🏛️</div>
+                    <h3>Metro Manila</h3>
+                    <p>Main Office & Development Center</p>
+                    <p>Quezon City, Metro Manila</p>
+                    <p>Technical support & training hub</p>
                 </div>
-                <!-- <div class="location-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="location-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Provincial Office</h3>
-                    <p>Iloilo City, Western Visayas<br>Philippines</p>
-                    <a href="#" class="btn btn-outline">Get Directions</a>
+                <div class="location-card">
+                    <div class="location-icon">🌴</div>
+                    <h3>Visayas Region</h3>
+                    <p>Cebu & Iloilo Offices</p>
+                    <p>Local support for Visayas clients</p>
+                    <p>LGU & cooperative focus</p>
                 </div>
-                <div class="location-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="location-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3>Regional Hub</h3>
-                    <p>Cebu City, Central Visayas<br>Philippines</p>
-                    <a href="#" class="btn btn-outline">Get Directions</a>
-                </div> -->
+                <div class="location-card">
+                    <div class="location-icon">🏔️</div>
+                    <h3>Mindanao Region</h3>
+                    <p>Davao & Cagayan de Oro</p>
+                    <p>Regional development center</p>
+                    <p>Agri-cooperative expertise</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ SECTION -->
+    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
             <h2>Frequently Asked Questions</h2>
-            <p class="section-subtitle">Common questions about our services and digital transformation solutions</p>
-            <div class="faq-container">
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="faq-question">
-                        <h3>What services do you offer for LGUs?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We offer comprehensive digital transformation services for Local Government Units including ERPNext implementation, permit and licensing systems, citizen service portals, and training for local IT teams. Our solutions are specifically designed for the unique needs of Philippine LGUs.</p>
-                    </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What makes Servio different from other software companies?</h3>
+                    <p>We're countryside-born and understand the unique challenges of rural digital transformation. Our solutions are built specifically for Philippine LGUs, cooperatives, and SMEs, with local support and compliance built-in.</p>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="faq-question">
-                        <h3>How long does it take to implement ERPNext?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Implementation timelines vary based on complexity and scope. Basic ERPNext setup typically takes 4-8 weeks, while comprehensive LGU systems may take 3-6 months. We work closely with your team to ensure smooth deployment and minimal disruption to operations.</p>
-                    </div>
+                
+                <div class="faq-item">
+                    <h3>How long does implementation typically take?</h3>
+                    <p>Implementation timelines vary by project scope. Simple LGU systems can be ready in 2-3 months, while comprehensive ERP solutions may take 6-12 months. We'll provide a detailed timeline during our discovery call.</p>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="faq-question">
-                        <h3>Do you offer training for local IT professionals?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! We have comprehensive training programs for IT professionals from outside NCR. This includes ERPNext certification, Frappe Framework development, and digital transformation leadership training. We believe in building local capacity for sustainable digital adoption.</p>
-                    </div>
+                
+                <div class="faq-item">
+                    <h3>Do you provide training and support?</h3>
+                    <p>Yes! We offer comprehensive training for your team, ongoing technical support, and regular updates. Our goal is to make you self-sufficient while providing backup support when needed.</p>
                 </div>
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="faq-question">
-                        <h3>What makes your solutions suitable for rural areas?</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our solutions are designed with rural challenges in mind: offline-first capabilities, low-bandwidth optimization, local language support, and simple interfaces. We also provide local support and training to ensure successful adoption in provincial settings.</p>
-                    </div>
+                
+                <div class="faq-item">
+                    <h3>What about data security and compliance?</h3>
+                    <p>We prioritize Philippine data sovereignty and compliance. Our solutions can be deployed on-premise or in local data centers, ensuring your data stays within Philippine borders and meets government requirements.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can you customize solutions for our specific needs?</h3>
+                    <p>Absolutely! We specialize in customizing ERPNext and other platforms to match your exact requirements. Whether it's LGU-specific workflows or cooperative member management, we'll tailor the solution to your needs.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What if we need ongoing development?</h3>
+                    <p>We offer ongoing development services, maintenance contracts, and can train your local IT team. We're committed to long-term partnerships that grow with your organization.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA SECTION -->
-    <section class="cta-section">
+    <!-- Call to Action Section -->
+    <section class="contact-cta">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Start Your Digital Transformation Journey?</h2>
-                <p>Let's discuss how Servio can help your organization embrace the future of digital governance and business operations.</p>
-                <div class="cta-buttons">
-                    <a href="#contactForm" class="btn btn-primary">Get Started Today</a>
-                    <a href="index.html#get-involved" class="btn btn-outline">Learn More</a>
-                </div>
+            <h2>Ready to Start Your Digital Transformation Journey?</h2>
+            <p>Join hundreds of Philippine organizations already benefiting from Servio's solutions.</p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-button primary">Schedule Free Consultation</a>
+                <a href="#" class="cta-button secondary">Download Brochure</a>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Company Info</h4>
+                    <p>Servio Technologies - Empowering the Digital Countryside with Philippine-made solutions for LGUs, cooperatives, and SMEs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#clients">Who We Serve</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: hello@servio.ph</p>
+                    <p>Phone: +63 XXX XXX XXXX</p>
+                    <p>Philippines</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li>LGU Management Systems</li>
+                        <li>Cooperative Software</li>
+                        <li>SME Business Tools</li>
+                        <li>Educational Platforms</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Servio Technologies. Building a digitally sovereign Philippines.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
-
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-
-        // FAQ Toggle Functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
-                
-                // Toggle answer visibility
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-                
-                // Toggle icon rotation
-                icon.style.transform = answer.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
-            });
-        });
-
-        // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Here you would typically send the data to your backend
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            alert('Thank you for your message! We will get back to you soon.');
-            
-            // Reset form
-            this.reset();
-        });
-    </script>
 </body>
 </html>
