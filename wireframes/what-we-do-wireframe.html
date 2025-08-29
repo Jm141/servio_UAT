@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Do Wireframe - Servio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .wireframe-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        .wireframe-title {
+            text-align: center;
+            background: #e0e0e0;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 2px dashed #999;
+            font-size: 24px;
+            color: #666;
+        }
+        
+        /* Header */
+        .header {
+            background: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 2px dashed #999;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            background: #ddd;
+            padding: 15px 30px;
+            border: 2px dashed #999;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            background: #ddd;
+            padding: 10px 20px;
+            border: 2px dashed #999;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: #f0f0f0;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            border: 2px dashed #999;
+        }
+        
+        .page-header h1 {
+            background: #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px dashed #999;
+            font-size: 36px;
+        }
+        
+        .page-header p {
+            background: #ddd;
+            padding: 15px;
+            border: 2px dashed #999;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Services Overview */
+        .services-overview {
+            margin-bottom: 40px;
+        }
+        
+        .services-overview h2 {
+            background: #ddd;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 2px dashed #999;
+            font-size: 28px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: #f0f0f0;
+            padding: 30px;
+            border: 2px dashed #999;
+        }
+        
+        .service-card h3 {
+            background: #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px dashed #999;
+            font-size: 24px;
+        }
+        
+        .service-card p {
+            background: #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px dashed #999;
+        }
+        
+        .service-features {
+            list-style: none;
+        }
+        
+        .service-features li {
+            background: #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px dashed #999;
+        }
+        
+        /* Process Section */
+        .process {
+            margin-bottom: 40px;
+        }
+        
+        .process h2 {
+            background: #ddd;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 2px dashed #999;
+            font-size: 28px;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .process-step {
+            background: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            border: 2px dashed #999;
+        }
+        
+        .step-number {
+            background: #ddd;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            border: 2px dashed #999;
+        }
+        
+        .process-step h3 {
+            background: #ddd;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px dashed #999;
+        }
+        
+        .process-step p {
+            background: #ddd;
+            padding: 10px;
+            border: 2px dashed #999;
+        }
+        
+        /* Solutions Section */
+        .solutions {
+            margin-bottom: 40px;
+        }
+        
+        .solutions h2 {
+            background: #ddd;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 2px dashed #999;
+            font-size: 28px;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .solution-item {
+            background: #f0f0f0;
+            padding: 25px;
+            text-align: center;
+            border: 2px dashed #999;
+        }
+        
+        .solution-icon {
+            background: #ddd;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border: 2px dashed #999;
+        }
+        
+        .solution-item h3 {
+            background: #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px dashed #999;
+        }
+        
+        .solution-item p {
+            background: #ddd;
+            padding: 15px;
+            border: 2px dashed #999;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: #f0f0f0;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            border: 2px dashed #999;
+        }
+        
+        .cta-section h2 {
+            background: #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px dashed #999;
+            font-size: 28px;
+        }
+        
+        .cta-section p {
+            background: #ddd;
+            padding: 15px;
+            margin-bottom: 30px;
+            border: 2px dashed #999;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            background: #ddd;
+            padding: 15px 40px;
+            border: 2px dashed #999;
+            display: inline-block;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #f0f0f0;
+            padding: 30px 20px;
+            text-align: center;
+            border: 2px dashed #999;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section {
+            background: #ddd;
+            padding: 20px;
+            border: 2px dashed #999;
+        }
+        
+        .footer-bottom {
+            background: #ddd;
+            padding: 15px;
+            border: 2px dashed #999;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-container">
+        <div class="wireframe-title">WHAT WE DO WIREFRAME</div>
+        
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav">
+                <div class="logo">LOGO</div>
+                <div class="nav-links">
+                    <div class="nav-link">Home</div>
+                    <div class="nav-link">About Us</div>
+                    <div class="nav-link">What We Do</div>
+                    <div class="nav-link">Who We Serve</div>
+                    <div class="nav-link">Contact</div>
+                </div>
+            </nav>
+        </header>
+        
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>What We Do</h1>
+            <p>Discover our comprehensive range of services and solutions designed to meet your needs</p>
+        </section>
+        
+        <!-- Services Overview -->
+        <section class="services-overview">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Service 1</h3>
+                    <p>Detailed description of the first main service offering</p>
+                    <ul class="service-features">
+                        <li>Feature 1</li>
+                        <li>Feature 2</li>
+                        <li>Feature 3</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Service 2</h3>
+                    <p>Detailed description of the second main service offering</p>
+                    <ul class="service-features">
+                        <li>Feature 1</li>
+                        <li>Feature 2</li>
+                        <li>Feature 3</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Process -->
+        <section class="process">
+            <h2>Our Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Step 1</h3>
+                    <p>Description of the first step in our process</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Step 2</h3>
+                    <p>Description of the second step in our process</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Step 3</h3>
+                    <p>Description of the third step in our process</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Step 4</h3>
+                    <p>Description of the fourth step in our process</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Solutions -->
+        <section class="solutions">
+            <h2>Our Solutions</h2>
+            <div class="solutions-grid">
+                <div class="solution-item">
+                    <div class="solution-icon"></div>
+                    <h3>Solution 1</h3>
+                    <p>Description of the first solution we provide</p>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-icon"></div>
+                    <h3>Solution 2</h3>
+                    <p>Description of the second solution we provide</p>
+                </div>
+                <div class="solution-item">
+                    <div class="solution-icon"></div>
+                    <h3>Solution 3</h3>
+                    <p>Description of the third solution we provide</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact us today to learn more about how we can help you achieve your goals</p>
+            <div class="cta-button">Get Started</div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Company Info</h4>
+                    <p>Brief company description</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p>Navigation links</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Phone, email, address</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Social Media</h4>
+                    <p>Social media links</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright & Legal Information</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVIO Logo Animation Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .section__headline {
+            text-align: center;
+        }
+
+        .gems--animated {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .gems--animated svg {
+            width: 300px;
+            height: auto;
+        }
+
+        /* Animation for the letters */
+        .letters {
+            opacity: 0;
+            animation: fadeInLetters 2s ease-in-out forwards;
+        }
+
+        .letter-s, .letter-e, .letter-r, .letter-v, .letter-i, .letter-o {
+            opacity: 0;
+            animation: drawLetter 1.5s ease-in-out forwards;
+        }
+
+        .letter-s { animation-delay: 0.2s; }
+        .letter-e { animation-delay: 0.4s; }
+        .letter-r { animation-delay: 0.6s; }
+        .letter-v { animation-delay: 0.8s; }
+        .letter-i { animation-delay: 1.0s; }
+        .letter-o { animation-delay: 1.2s; }
+
+        /* Fill animations */
+        .fill-1, .fill-2, .fill-3 {
+            opacity: 0;
+            animation: fillIn 1s ease-in-out forwards;
+        }
+
+        .fill-1 { animation-delay: 1.5s; }
+        .fill-2 { animation-delay: 1.7s; }
+        .fill-3 { animation-delay: 1.9s; }
+
+        /* Outline animations */
+        .outline-1, .outline-2, .outline-3 {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawOutline 2s ease-in-out forwards;
+        }
+
+        .outline-1 { animation-delay: 0.5s; }
+        .outline-2 { animation-delay: 0.7s; }
+        .outline-3 { animation-delay: 0.9s; }
+
+        @keyframes fadeInLetters {
+            to { opacity: 1; }
+        }
+
+        @keyframes drawLetter {
+            to { opacity: 1; }
+        }
+
+        @keyframes fillIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes drawOutline {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* Hover effects */
+        .gems--animated:hover svg {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Info text */
+        .info {
+            margin-top: 30px;
+            text-align: center;
+            color: #888;
+            max-width: 500px;
+        }
+
+        .info h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .info p {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        /* Button styles */
+        .controls {
+            margin-top: 20px;
+        }
+
+        .btn {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #555;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="section__headline">
+        <div class="gems--animated">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="212.6" height="45.4" viewBox="0 0 212.6 45.4" enable-background="new 0 0 212.6 45.4" xml:space="preserve">
+                <defs>
+                    <clipPath id="gems-clip">
+                        <path fill="#fff" d="M18.9 35c-3.4-3.3-5-7.4-5-12.3 0-9.8 7.4-17.3 17.7-17.3 4.9 0 9 1.6 12.3 4.8l-4.2 4.4c-2.3-2.3-5-3.4-8.2-3.4-6.4 0-11.2 5.1-11.2 11.5 0 6.5 5 11.5 11.5 11.5 2.8 0 5.3-.9 7.5-2.6v-7.2h-8.6v-5.8h15.1v14.9c-3.1 3.9-8.1 6.4-14.1 6.4-5.2.1-9.4-1.6-12.8-4.9zM93.1 33.7v5.8H72.5V5.9h20.2v5.8H79v7h10.3v5.8H79v9.4h14.1zM125.3 20.8v18.7h-6.5V5.9h4.5L135.7 26l12.2-20.1h4.5v33.6H146V20.8L137.9 34h-4.5l-8.1-13.2zM181 30.5c2.2 2.5 4.9 3.7 7.9 3.7 2.9 0 4.9-1.8 4.9-4.2 0-2.6-2-3.9-6.2-5.5-2.1-.8-3.6-1.5-4.5-2-3.2-1.9-4.8-4.4-4.8-7.6 0-5.7 5.2-9.4 11.1-9.4 3.6 0 6.9 1.1 9.8 3.2l-3.4 4.8c-1.6-1.5-3.5-2.2-5.8-2.2-2.7 0-5.2 1.2-5.2 3.6 0 1.9 2.5 3.3 5.5 4.5s6.3 2.3 8.4 5.2c1.1 1.5 1.6 3.3 1.6 5.4 0 5.8-5.2 10.1-11.4 10.1-4.4 0-8.5-1.7-12.2-5l4.3-4.6z"/>
+                    </clipPath>
+                </defs>
+                <g class="letters" clip-path="url(#gems-clip)" stroke="#1D1D1F" fill="none" stroke-miterlimit="10">
+                    <g class="letter-s">
+                        <path class="fill-2" d="M188.4,21.6c1.6,0.7,3.4,1.4,5.1,2.5c2.6,1.5,3.6,3.5,3.6,5.8c0,4.1-3.6,7.2-8.1,7.2c-3.7,0-7.1-1.5-10-4.4"/>
+                        <path class="fill-1" d="M188.4,21.6c-0.6-0.2-1.2-0.5-1.7-0.7c-3.1-1.5-5.1-3.5-5.1-6c0-4.1,3.8-6.5,8.1-6.5c3,0,5.5,0.9,7.8,2.7"/>
+                        <path class="outline-2" d="M195.8,13.4c-1.6-1.5-3.5-2.2-5.8-2.2c-2.7,0-5.2,1.2-5.2,3.6c0,1.9,2.5,3.3,5.5,4.5s6.3,2.3,8.4,5.2c1.1,1.5,1.6,3.3,1.6,5.4c0,5.8-5.2,10.1-11.4,10.1c-4.4,0-8.5-1.7-12.2-5"/>
+                        <path class="outline-1" d="M181,30.5c2.2,2.5,4.9,3.7,7.9,3.7c2.9,0,4.9-1.8,4.9-4.2c0-2.6-2-3.9-6.2-5.5c-2.1-0.8-3.6-1.5-4.5-2c-3.2-1.9-4.8-4.4-4.8-7.6c0-5.7,5.2-9.4,11.1-9.4c3.6,0,6.9,1.1,9.8,3.2"/>
+                    </g>
+                    <g class="letter-e">
+                        <polyline class="outline-3" points="89.3,24.4 79,24.4 79,33.7 93.2,33.7 "/>
+                        <polyline class="outline-2" points="92.7,11.6 79,11.6 79,18.6 89.3,18.6 "/>
+                        <polyline class="outline-1" points="93.2,39.5 72.5,39.5 72.5,5.9 92.7,5.9 "/>
+                        <polyline class="fill-3" points="75.8,21.5 75.8,36.6 93.2,36.6 "/>
+                        <line class="fill-1" x1="89.3" y1="21.5" x2="75.8" y2="21.5"/>
+                        <polyline class="fill-2" points="92.7,8.8 75.8,8.8 75.8,21.5 "/>
+                    </g>
+                    <g class="letter-r">
+                        <polyline class="fill-1" points="122.1,39.5 122.1,9.3 135.7,31.9 135.9,31.6 "/>
+                        <polyline class="fill-2" points="135.7,31.9 149.2,9.3 149.2,39.5"/>
+                        <polyline class="outline-2" points="146,39.5 146,20.8 137.9,34 133.4,34 125.4,20.8 125.4,39.5 "/>
+                        <polyline class="outline-1" points="118.9,39.5 118.9,5.9 123.4,5.9 135.7,26 147.9,5.9 152.5,5.9 152.5,39.5 "/>
+                    </g>
+                    <g class="letter-v">
+                        <polyline class="outline-3" points="89.3,24.4 79,24.4 79,33.7 93.2,33.7 "/>
+                        <polyline class="outline-2" points="92.7,11.6 79,11.6 79,18.6 89.3,18.6 "/>
+                        <polyline class="outline-1" points="93.2,39.5 72.5,39.5 72.5,5.9 92.7,5.9 "/>
+                        <polyline class="fill-3" points="75.8,21.5 75.8,36.6 93.2,36.6 "/>
+                        <line class="fill-1" x1="89.3" y1="21.5" x2="75.8" y2="21.5"/>
+                        <polyline class="fill-2" points="92.7,8.8 75.8,8.8 75.8,21.5 "/>
+                    </g>
+                    <g class="letter-i">
+                        <line class="outline-2" x1="187.9" y1="66.8" x2="187.9" y2="100.4"/>
+                        <line class="outline-1" x1="181.5" y1="100.4" x2="181.5" y2="66.8"/>
+                        <line class="fill-2" x1="184.7" y1="76.1" x2="184.7" y2="66.8"/>
+                        <line class="fill-1" x1="184.7" y1="100.4" x2="184.7" y2="76.1"/>
+                    </g>
+                    <g class="letter-o">
+                        <path class="fill-2" d="M40.8,34.2c0.7-0.5,1.3-1,1.8-1.6V21.5H30.7"/>
+                        <path class="fill-1" d="M42.6,32.6c-2.6,2.8-6.4,4.5-10.8,4.5c-4.2,0-7.8-1.5-10.5-4.2c-2.7-2.7-4.1-6.2-4.1-10.2c0-8.1,6.1-14.4,14.4-14.4c4,0,7.4,1.4,10.2,4.1"/>
+                        <path class="outline-2" d="M39.7,14.6c-2.3-2.3-5-3.4-8.2-3.4c-6.4,0-11.2,5.1-11.2,11.5c0,6.5,5,11.5,11.5,11.5c2.8,0,5.3-0.9,7.5-2.6v-7.2h-8.6"/>
+                        <path class="outline-1" d="M30.7,18.6h15.1v14.9c-3.1,3.9-8.1,6.4-14.1,6.4c-5.2,0-9.4-1.7-12.8-5s-5-7.4-5-12.3c0-9.8,7.4-17.3,17.7-17.3c4.9,0,9,1.6,12.3,4.8"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div class="info">
+        <h3>SERVIO Logo Animation Test</h3>
+        <p>This demonstrates the animated SVG logo with staggered letter animations</p>
+        <p>Hover over the logo to see the scale effect</p>
+        <p>Click the logo or use buttons below to restart animations</p>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="restartAnimation()">Restart Animation</button>
+        <button class="btn" onclick="toggleAnimation()">Pause/Resume</button>
+        <button class="btn" onclick="changeSpeed()">Change Speed</button>
+    </div>
+
+    <script>
+        let isPaused = false;
+        let animationSpeed = 1;
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const logo = document.querySelector('.gems--animated');
+            
+            // Add click effect to restart animation
+            logo.addEventListener('click', function() {
+                restartAnimation();
+            });
+        });
+
+        function restartAnimation() {
+            const letters = document.querySelectorAll('.letter-s, .letter-e, .letter-r, .letter-v, .letter-i, .letter-o');
+            const fills = document.querySelectorAll('.fill-1, .fill-2, .fill-3');
+            const outlines = document.querySelectorAll('.outline-1, .outline-2, .outline-3');
+            const mainLetters = document.querySelector('.letters');
+            
+            // Reset main letters container
+            mainLetters.style.animation = 'none';
+            setTimeout(() => {
+                mainLetters.style.animation = '';
+            }, 10);
+            
+            // Reset individual letters
+            letters.forEach(letter => {
+                letter.style.animation = 'none';
+                setTimeout(() => {
+                    letter.style.animation = '';
+                }, 10);
+            });
+            
+            // Reset fills
+            fills.forEach(fill => {
+                fill.style.animation = 'none';
+                setTimeout(() => {
+                    fill.style.animation = '';
+                }, 10);
+            });
+            
+            // Reset outlines
+            outlines.forEach(outline => {
+                outline.style.animation = 'none';
+                setTimeout(() => {
+                    outline.style.animation = '';
+                }, 10);
+            });
+        }
+
+        function toggleAnimation() {
+            const logo = document.querySelector('.gems--animated');
+            const svg = logo.querySelector('svg');
+            
+            if (isPaused) {
+                svg.style.animationPlayState = 'running';
+                isPaused = false;
+            } else {
+                svg.style.animationPlayState = 'paused';
+                isPaused = true;
+            }
+        }
+
+        function changeSpeed() {
+            const logo = document.querySelector('.gems--animated');
+            const svg = logo.querySelector('svg');
+            
+            if (animationSpeed === 1) {
+                animationSpeed = 0.5;
+                svg.style.animationDuration = '1s';
+            } else if (animationSpeed === 0.5) {
+                animationSpeed = 2;
+                svg.style.animationDuration = '4s';
+            } else {
+                animationSpeed = 1;
+                svg.style.animationDuration = '2s';
+            }
+        }
+
+        // Add some extra visual effects
+        document.addEventListener('mousemove', function(e) {
+            const logo = document.querySelector('.gems--animated');
+            const rect = logo.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            // Subtle tilt effect based on mouse position
+            const tiltX = (y / rect.height) * 5;
+            const tiltY = (x / rect.width) * 5;
+            
+            logo.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+        });
+
+        // Reset transform when mouse leaves
+        document.addEventListener('mouseleave', function() {
+            const logo = document.querySelector('.gems--animated');
+            logo.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+        });
+    </script>
+</body>
+</html>
