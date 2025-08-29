@@ -508,7 +508,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
     padding: 2rem 0;
     opacity: 0;
     visibility: hidden;
@@ -525,7 +525,7 @@ h3 {
     font-weight: 400;
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: .5px;
     transition: all 0.3s ease;
     position: relative;
     padding: 0.5rem 0;
