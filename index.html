@@ -13,24 +13,27 @@
 <body>
     <!-- SPLASH SCREEN -->
     <div class="splash-screen" id="splashScreen">
-       
-        <div class="splash-cut-left"></div>
-         <div class="splash-content">
-                         <div class="splash-logo">
-                 <div class="logo-animation">
-                     <span class="letter">S</span>
-                     <span class="letter">E</span>
-                     <span class="letter">R</span>
-                     <span class="letter">V</span>
-                     <span class="letter">I</span>
-                     <span class="letter">O</span>
-                 </div>
-             </div>
+        <div class="splash-background">
+            <div class="splash-particles"></div>
+        </div>
+        <div class="splash-content">
+            <div class="splash-logo">
+                <div class="logo-container">
+                    <div class="logo-text">
+                        <span class="letter" data-letter="S">S</span>
+                        <span class="letter" data-letter="E">E</span>
+                        <span class="letter" data-letter="R">R</span>
+                        <span class="letter" data-letter="V">V</span>
+                        <span class="letter" data-letter="I">I</span>
+                        <span class="letter" data-letter="O">O</span>
+                    </div>
+                    <div class="logo-subtitle">Digital Countryside</div>
+                </div>
+            </div>
             <div class="loading-bar">
                 <div class="loading-progress"></div>
             </div>
         </div>
-        <div class="splash-cut-right"></div>
     </div>
 
     <!-- HEADER -->
@@ -52,7 +55,7 @@
                 <a href="#tools-we-trust">Tools We Trust</a>
                 <a href="#who-we-serve">Who We Serve</a>
                 <a href="index.html#what-we-do">What We Do</a>
-                <!-- <a href="index.html#why-it-matters">Why It Matters</a> -->
+                <a href="#why-it-matters">Why It Matters</a>
                 <!-- <a href="index.html#get-involved">Get Involved</a> -->
                 <a href="#success-stories">Success Stories</a>
                 <a href="contact.html" class="active">Contact</a>
@@ -69,21 +72,39 @@
 
     <!-- HERO SECTION -->
     <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+            <div class="hero-gradient"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
-                                <h1>Empowering the Digital Countryside</h1>
-                <!-- <ul class="hero-bullets">
-                    <li style="list-style: none;"><span class="highlight">LGUs</span> - Local governments</li>
-                    <li><span class="highlight">Cooperatives</span> - Rural enterprises</li>
-                    <li><span class="highlight">Schools</span> - Educational institutions</li>
-                    <li><span class="highlight">Businesses</span> - Provincial SMEs</li> -->
-                <!-- </ul> -->
-                <p class="hero-subtitle">Digital tools for the Filipino countryside. ERPNext made simple, affordable, and local. From Eastwood to probinsya, we bring world-class technology that serves every community.</p>
+                <div class="hero-badge">
+                    <span class="badge-text">Empowering the Digital Countryside</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Digital tools for the</span>
+                    <span class="title-line highlight">Filipino countryside</span>
+                </h1>
+                <p class="hero-subtitle">ERPNext made simple, affordable, and local. From Eastwood to probinsya, we bring world-class technology that serves every community.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-secondary">🚀 Let's Build Together</button>
-                    <button class="btn btn-primary">🛠️ Explore Our Services</button>
+                    <button class="btn btn-primary">🚀 Let's Build Together</button>
+                    <button class="btn btn-secondary">🛠️ Explore Our Services</button>
                     <button class="btn btn-outline">🌱 Join Our Community</button>
                     <button class="btn btn-outline">🤝 Partner with Servio</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Communities Served</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Open Source</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Local Support</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -104,14 +125,14 @@
 
             <!-- Section 2: Mission & Vision -->
             <div class="mission-vision-grid">
-                <div class="mission-card">
+                <div class="mission-card" data-aos="fade-in" data-aos-delay="200">
                     <div class="card-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>Our Mission</h3>
                     <p>To empower the Philippine countryside with open, intelligent, and affordable digital tools — enabling sustainable growth across LGUs, cooperatives, and local enterprises.</p>
                 </div>
-                <div class="vision-card">
+                <div class="vision-card" data-aos="fade-in" data-aos-delay="400">
                     <div class="card-icon">
                         <i class="fas fa-eye"></i>
                     </div>
@@ -121,25 +142,25 @@
             </div>
 
             <!-- Section 3: Meet the Founders -->
-            <div class="founders-section">
-                <h3 class="founders-headline">Led by Innovators. Rooted in Service.</h3>
-                <p class="founders-intro">Behind Servio are industry leaders with decades of experience in enterprise technology, digital transformation, and systems thinking.</p>
+            <div class="founders-section" data-aos="fade-up" data-aos-duration="800">
+                <h3 class="founders-headline" data-aos="fade-in" data-aos-delay="200">Led by Innovators. Rooted in Service.</h3>
+                <p class="founders-intro" data-aos="fade-in" data-aos-delay="300">Behind Servio are industry leaders with decades of experience in enterprise technology, digital transformation, and systems thinking.</p>
                 <div class="founders-grid">
-                    <div class="founder-card">
+                    <div class="founder-card" data-aos="fade-in" data-aos-delay="400">
                         <div class="founder-avatar">
                             <i class="fas fa-user-tie"></i>
                         </div>
                         <h4>Joey Gurango</h4>
                         <p>Software industry veteran and advocate of digital empowerment</p>
                     </div>
-                    <div class="founder-card">
+                    <div class="founder-card" data-aos="fade-in" data-aos-delay="500">
                         <div class="founder-avatar">
                             <i class="fas fa-user-tie"></i>
                         </div>
                         <h4>Ton Ancheta</h4>
                         <p>Champion of rural innovation and system design</p>
                     </div>
-                    <div class="founder-card">
+                    <div class="founder-card" data-aos="fade-in" data-aos-delay="600">
                         <div class="founder-avatar">
                             <i class="fas fa-user-tie"></i>
                         </div>
@@ -147,28 +168,28 @@
                         <p>Community-driven leader in digital adoption and change management</p>
                     </div>
                 </div>
-                <p class="founders-footer">Their leadership reflects our values: local-first, open-source, and built for real-world impact.</p>
+                <p class="founders-footer" data-aos="fade-in" data-aos-delay="700">Their leadership reflects our values: local-first, open-source, and built for real-world impact.</p>
             </div>
 
             <!-- Section 4: Our Journey -->
-            <div class="journey-section">
-                <h3 class="journey-headline">From Prototypes to Provinces</h3>
+            <div class="journey-section" data-aos="fade-up" data-aos-duration="800">
+                <h3 class="journey-headline" data-aos="fade-in" data-aos-delay="200">From Prototypes to Provinces</h3>
                 <div class="journey-timeline">
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-in" data-aos-delay="300">
                         <div class="timeline-marker">2020</div>
                         <div class="timeline-content">
                             <h4>Eastwood Beginnings</h4>
                             <p>Started with a vision to democratize technology</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-in" data-aos-delay="400">
                         <div class="timeline-marker">2022</div>
                         <div class="timeline-content">
                             <h4>First Provincial Partners</h4>
                             <p>Began serving LGUs and cooperatives in the countryside</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-in" data-aos-delay="500">
                         <div class="timeline-marker">2024</div>
                         <div class="timeline-content">
                             <h4>Digital Countryside Movement</h4>
@@ -179,17 +200,17 @@
             </div>
 
             <!-- Section 5: What We Stand For -->
-            <div class="values-section">
-                <h3 class="values-headline">What We Stand For</h3>
+            <div class="values-section" data-aos="fade-up" data-aos-duration="800">
+                <h3 class="values-headline" data-aos="fade-in" data-aos-delay="200">What We Stand For</h3>
                 <div class="values-grid">
-                    <div class="value-card">
+                    <div class="value-card" data-aos="fade-in" data-aos-delay="300">
                         <div class="value-icon">
                             <i class="fas fa-door-open"></i>
                         </div>
                         <h4>Openness</h4>
                         <p>We believe in open-source platforms and transparent partnerships</p>
                     </div>
-                    <div class="value-card">
+                    <div class="value-card" data-aos="fade-in" data-aos-delay="400">
                         <div class="value-icon">
                             <i class="fas fa-hands-helping"></i>
                         </div>
@@ -450,18 +471,18 @@
 
 
         <!-- WHO WE SERVE -->
-    <section id="who-we-serve" class="who-we-serve">
+    <section id="who-we-serve" class="who-we-serve" data-aos="fade-up" data-aos-duration="800">
         <div class="background-overlay"></div>
         <div class="container">
             <!-- Intro Section -->
-            <div class="serve-intro">
+            <div class="serve-intro" data-aos="fade-in" data-aos-delay="200">
                 <h2>One Mission. Many Sectors. Deep Impact.</h2>
                 <p class="serve-intro-body">Servio is built to serve the backbone of the countryside — from government offices to rural cooperatives, growing businesses to community-led development orgs.</p>
                 <p class="serve-intro-body">Every sector we serve shares one thing in common: the need for digital systems that are reliable, local-first, and built for scale.</p>
                 <p class="serve-intro-body">We tailor our approach for each industry, knowing that true transformation begins when tools meet context — and people are empowered to lead the change.</p>
             </div>
             
-            <h2>Sino ang Aming Sinisilbihan</h2>
+            <h2 data-aos="fade-in" data-aos-delay="300">Sino ang Aming Sinisilbihan</h2>
             <div class="serve-grid">
                 <div class="serve-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="serve-icon">
@@ -501,14 +522,14 @@
 
     
     <!-- INDUSTRIES WE SERVE SECTION -->
-    <section id="industries" class="industries-we-serve">
+    <section id="industries" class="industries-we-serve" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
-            <h2>Industries We Serve</h2>
-            <p class="section-subtitle">One Mission. Many Sectors. Deep Impact.</p>
-            <p class="industries-intro">Servio is built to serve the backbone of the countryside — from government offices to rural cooperatives, growing businesses to community-led development orgs. Every sector we serve shares one thing in common: the need for digital systems that are reliable, local-first, and built for scale.</p>
+            <h2 data-aos="fade-in" data-aos-delay="200">Industries We Serve</h2>
+            <p class="section-subtitle" data-aos="fade-in" data-aos-delay="300">One Mission. Many Sectors. Deep Impact.</p>
+            <p class="industries-intro" data-aos="fade-in" data-aos-delay="400">Servio is built to serve the backbone of the countryside — from government offices to rural cooperatives, growing businesses to community-led development orgs. Every sector we serve shares one thing in common: the need for digital systems that are reliable, local-first, and built for scale.</p>
             
             <div class="industries-grid">
-                <div class="industry-card">
+                <div class="industry-card" data-aos="fade-in" data-aos-delay="500">
                     <div class="industry-icon">
                         <i class="fas fa-landmark"></i>
                     </div>
@@ -527,7 +548,7 @@
                     <button class="btn btn-outline">🗂 Explore LGU Solutions</button>
                 </div>
                 
-                <div class="industry-card">
+                <div class="industry-card" data-aos="fade-in" data-aos-delay="600">
                     <div class="industry-icon">
                         <i class="fas fa-seedling"></i>
                     </div>
@@ -546,7 +567,7 @@
                     <button class="btn btn-outline">🌱 See Coop Tools in Action</button>
                 </div>
                 
-                <div class="industry-card">
+                <div class="industry-card" data-aos="fade-in" data-aos-delay="700">
                     <div class="industry-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -565,7 +586,7 @@
                     <button class="btn btn-outline">💼 Discover SME Solutions</button>
                 </div>
                 
-                <div class="industry-card">
+                <div class="industry-card" data-aos="fade-in" data-aos-delay="800">
                     <div class="industry-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
@@ -585,7 +606,7 @@
                 </div>
             </div>
             
-            <div class="industries-cta">
+            <div class="industries-cta" data-aos="fade-in" data-aos-delay="900">
                 <p>No matter the sector, we meet you where you are — and help you move forward.</p>
                 <p>Let's talk about how we can support your digital journey.</p>
                 <div class="cta-buttons">
@@ -599,32 +620,32 @@
 
    
     <!-- WHY CHOOSE US -->
-    <section class="why-choose-us">
+    <section class="why-choose-us" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
-            <h2>Bakit Kami ang Pipiliin Ninyo</h2>
+            <h2 data-aos="fade-in" data-aos-delay="200">Bakit Kami ang Pipiliin Ninyo</h2>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-in" data-aos-delay="300">
                     <div class="feature-icon">
                         <i class="fas fa-coins"></i>
                     </div>
                     <h3>Affordable</h3>
                     <p>ERPNext-powered solutions na fit sa budget ng lahat</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-in" data-aos-delay="400">
                     <div class="feature-icon">
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>Local Support</h3>
                     <p>Filipino team na kasama sa progress ng probinsya</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-in" data-aos-delay="500">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Open Source & Secure</h3>
                     <p>ERPNext-based solutions na may enterprise-grade security</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-aos="fade-in" data-aos-delay="600">
                     <div class="feature-icon">
                         <i class="fas fa-star"></i>
                     </div>
@@ -636,53 +657,53 @@
     </section>
 
         <!-- HOW IT WORKS -->
-    <section class="how-it-works">
+    <section class="how-it-works" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
-            <h2>Paano Gumagana</h2>
+            <h2 data-aos="fade-in" data-aos-delay="200">Paano Gumagana</h2>
             <div class="process-steps">
-                <div class="step">
+                <div class="step" data-aos="fade-in" data-aos-delay="300">
                     <div class="step-number">1</div>
                     <h3>Libre Assessment</h3>
                     <p>Naiintindihan namin ang needs ng probinsya at current setup</p>
                 </div>
-                <div class="step">
+                <div class="step" data-aos="fade-in" data-aos-delay="400">
                     <div class="step-number">2</div>
                     <h3>Tailored Setup</h3>
                     <p>ERPNext na naka-configure para sa needs ng community</p>
                 </div>
-                <div class="step">
+                <div class="step" data-aos="fade-in" data-aos-delay="500">
                     <div class="step-number">3</div>
                     <h3>Train Your Team</h3>
                     <p>Training sa local language para sa community</p>
                 </div>
-                <div class="step">
+                <div class="step" data-aos="fade-in" data-aos-delay="600">
                     <div class="step-number">4</div>
                     <h3>Ongoing Support</h3>
                     <p>Continuous assistance habang lumalago ang community</p>
                 </div>
             </div>
-            <div class="process-cta">
+            <div class="process-cta" data-aos="fade-in" data-aos-delay="700">
                 <button class="btn btn-primary btn-large">Simulan ang Libre Assessment</button>
             </div>
         </div>
     </section>
 
     <!-- WHY IT MATTERS -->
-    <section class="why-it-matters">
+    <section id="why-it-matters" class="why-it-matters" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
             <div class="why-it-matters-content">
-                <div class="mission-statement">
+                <div class="mission-statement" data-aos="fade-in" data-aos-delay="200">
                     <h2>"Hindi dapat privilege ng geography ang technology. Hindi rin dapat privilege ang governance, opportunity, o innovation."</h2>
                 </div>
-                <div class="narrative-section">
+                <div class="narrative-section" data-aos="fade-in" data-aos-delay="300">
                     <p>Naniniwala ang Servio na ang susunod na wave ng Philippine transformation ay manggagaling sa probinsya — sa pamamagitan ng public service innovation at people-first software.</p>
                     <div class="impact-points">
-                        <div class="impact-point">
+                        <div class="impact-point" data-aos="fade-in" data-aos-delay="400">
                             <i class="fas fa-bridge"></i>
                             <h3>Bridging Tech Inequality</h3>
                             <p>Mula sa town halls hanggang shopping malls — isang standard: Open. Reliable. Designed para sa mga taong gumagamit.</p>
                         </div>
-                        <div class="impact-point">
+                        <div class="impact-point" data-aos="fade-in" data-aos-delay="500">
                             <i class="fas fa-chart-line"></i>
                             <h3>Provincial Innovation</h3>
                             <p>Binibigyan ng kapangyarihan ang local communities na mamuno ng digital transformation sa kanilang sariling regions.</p>
@@ -694,40 +715,40 @@
     </section>
 
     <!-- SUCCESS STORIES -->
-    <section id="success-stories" class="success-stories">
+    <section id="success-stories" class="success-stories" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
-            <h2>Mga Kwento ng Tagumpay</h2>
+            <h2 data-aos="fade-in" data-aos-delay="200">Mga Kwento ng Tagumpay</h2>
             <div class="testimonials">
-                <div class="testimonial">
+                <div class="testimonial" data-aos="fade-in" data-aos-delay="300">
                     <p>"Mas maganda na ang LGU reports gamit ang ERPNext"</p>
                     <span class="author">– IT Officer, Provincial LGU</span>
                 </div>
-                <div class="testimonial">
+                <div class="testimonial" data-aos="fade-in" data-aos-delay="400">
                     <p>"Madali gamitin para sa aming mga members"</p>
                     <span class="author">– Coop Leader, Rural Cooperative</span>
                 </div>
-                <div class="testimonial">
+                <div class="testimonial" data-aos="fade-in" data-aos-delay="500">
                     <p>"ROI agad sa Servio solutions"</p>
                     <span class="author">– SME Owner, Provincial Business</span>
                 </div>
-                <div class="testimonial">
+                <div class="testimonial" data-aos="fade-in" data-aos-delay="600">
                     <p>"Ginawang simple ng ERPNext ang school management"</p>
                     <span class="author">– School Admin, Rural School</span>
                 </div>
             </div>
-            <div class="stories-cta">
+            <div class="stories-cta" data-aos="fade-in" data-aos-delay="700">
                 <button class="btn btn-outline">I-Download ang Digital Countryside Toolkit</button>
             </div>
         </div>
     </section>
 
     <!-- GET INVOLVED -->
-    <section class="get-involved">
+    <section class="get-involved" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
-            <h2>Sumali sa Amin</h2>
-            <p class="section-subtitle">Sumali sa digital countryside movement</p>
+            <h2 data-aos="fade-in" data-aos-delay="200">Sumali sa Amin</h2>
+            <p class="section-subtitle" data-aos="fade-in" data-aos-delay="300">Sumali sa digital countryside movement</p>
             <div class="involvement-grid">
-                <div class="involvement-card">
+                <div class="involvement-card" data-aos="fade-in" data-aos-delay="400">
                     <div class="card-icon">
                         <i class="fas fa-landmark"></i>
                     </div>
@@ -735,7 +756,7 @@
                     <p>Gawing simple ang governance, i-automate ang systems, i-improve ang citizen service</p>
                     <button class="btn btn-primary">I-Modernize gamit ang Servio</button>
                 </div>
-                <div class="involvement-card">
+                <div class="involvement-card" data-aos="fade-in" data-aos-delay="500">
                     <div class="card-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
@@ -743,7 +764,7 @@
                     <p>I-boost ang operational efficiency gamit ang aming DX toolkit</p>
                     <button class="btn btn-primary">Book ng Discovery Call</button>
                 </div>
-                <div class="involvement-card">
+                <div class="involvement-card" data-aos="fade-in" data-aos-delay="600">
                     <div class="card-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
@@ -751,7 +772,7 @@
                     <p>Mag-training, mag-certified, sumali sa aming project pool</p>
                     <button class="btn btn-primary">Sumali sa Frappe Network</button>
                 </div>
-                <div class="involvement-card">
+                <div class="involvement-card" data-aos="fade-in" data-aos-delay="700">
                     <div class="card-icon">
                         <i class="fas fa-heart"></i>
                     </div>
@@ -764,10 +785,10 @@
     </section>
 
     <!-- BIG CTA BANNER -->
-    <section class="big-cta">
+    <section class="big-cta" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
-            <h2>Mula sa barangays hanggang campuses — ginagawa natin ang digital countryside together</h2>
-            <div class="cta-buttons">
+            <h2 data-aos="fade-in" data-aos-delay="200">Mula sa barangays hanggang campuses — ginagawa natin ang digital countryside together</h2>
+            <div class="cta-buttons" data-aos="fade-in" data-aos-delay="400">
                 <button class="btn btn-primary btn-large">Book Libre Assessment</button>
                 <button class="btn btn-secondary btn-large">I-Train ang Team</button>
             </div>
@@ -775,26 +796,26 @@
     </section>
 
     <!-- FOOTER -->
-    <footer id="contact" class="footer">
+    <footer id="contact" class="footer" data-aos="fade-up" data-aos-duration="800">
         <div class="container">
-            <div  class="footer-content">
-                <div class="footer-section">
+            <div class="footer-content">
+                <div class="footer-section" data-aos="fade-in" data-aos-delay="200">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#home">Solutions</a></li>
                         <li><a href="#who-we-serve">Who We Serve</a></li>
-                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#about-us">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-section" data-aos="fade-in" data-aos-delay="300">
                     <h4>Contact Info</h4>
-                                         <p><i class="fas fa-phone"></i> +63 2 1234 5678</p>
-                     <p><i class="fas fa-envelope"></i> hello@servio.ph</p>
-                     <p><i class="fas fa-map-marker-alt"></i> Eastwood to Probinsya, Philippines</p>
+                    <p><i class="fas fa-phone"></i> +63 2 1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> hello@servio.ph</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Eastwood to Probinsya, Philippines</p>
                 </div>
-                <div class="footer-section">
+                <div class="footer-section" data-aos="fade-in" data-aos-delay="400">
                     <h4>Social Media</h4>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -804,14 +825,14 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="footer-bottom" data-aos="fade-in" data-aos-delay="500">
                 <div class="compliance-logos">
                     <span>DILG</span>
                     <span>TESDA</span>
                     <span>DBM</span>
                     <span>COA</span>
                 </div>
-                                 <p>&copy; 2024 Servio. Empowering the Digital Countryside. All rights reserved.</p>
+                <p>&copy; 2024 Servio. Empowering the Digital Countryside. All rights reserved.</p>
             </div>
         </div>
     </footer>

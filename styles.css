@@ -2237,3 +2237,83 @@ h3 {
         font-size: 1.2rem;
     }
 }
+
+/* Additional AOS Animation Enhancements */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* Custom animation for staggered card reveals */
+.card-stagger {
+    animation: cardStagger 0.6s ease forwards;
+}
+
+@keyframes cardStagger {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced loading animations */
+.loading-animation {
+    animation: loadingPulse 2s ease-in-out infinite;
+}
+
+@keyframes loadingPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+}
+
+/* Smooth section transitions */
+section {
+    transition: all 0.5s ease;
+}
+
+/* Enhanced button states */
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Improved focus states for accessibility */
+.btn:focus,
+a:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Enhanced mobile animations */
+@media (max-width: 768px) {
+    [data-aos] {
+        transition-duration: 0.6s !important;
+    }
+    
+    .btn:hover {
+        transform: none;
+    }
+    
+    .feature-card:hover,
+    .industry-card:hover,
+    .serve-card:hover,
+    .involvement-card:hover,
+    .testimonial:hover,
+    .step:hover {
+        transform: none;
+    }
+}
