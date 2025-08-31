@@ -31,6 +31,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Geometric hero is now static and visible by default
             console.log('Geometric hero section is now visible');
             
+            // Trigger the geometric hero animations after splashscreen
+            const geometricHero = document.querySelector('.geometric-hero');
+            if (geometricHero) {
+                const heroSplitLayout = geometricHero.querySelector('.hero-split-layout');
+                if (heroSplitLayout) {
+                    // Add animate class to trigger all the animations
+                    setTimeout(() => {
+                        heroSplitLayout.classList.add('animate');
+                        console.log('Geometric hero animations triggered');
+                    }, 200); // Small delay to ensure smooth transition
+                }
+            }
+            
             // Fade in the hero section after a short delay
             setTimeout(() => {
                 if (heroSection) {
