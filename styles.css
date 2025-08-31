@@ -834,12 +834,13 @@ h3 {
 }
 
 .hero-left-section {
-    flex: 0 0 40%;
+    flex: 0 0 20%;
     background-color: #ffffff;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 0 4rem;
+    padding: 0 3rem;
+    padding-top: 6rem;
     position: relative;
     z-index: 2;
 }
@@ -853,10 +854,11 @@ h3 {
     line-height: 1.1;
     color: #000000;
     text-align: left;
-    max-width: 500px;
+    max-width: 400px;
     opacity: 0;
     transform: translateX(-50px);
     transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: -2rem;
 }
 
 .hero-split-layout.animate .hero-heading {
@@ -870,7 +872,7 @@ h3 {
 
 
 .hero-right-section {
-    flex: 0 0 60%;
+    flex: 0 0 80%;
     position: relative;
     overflow: hidden;
 }
@@ -900,16 +902,17 @@ h3 {
     bottom: 4rem;
     right: 4rem;
     max-width: 400px;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 2rem;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.85);
+    padding: 1.5rem;
+    border-radius: 16px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     z-index: 3;
     opacity: 0;
     transform: translateY(30px) scale(0.95);
     transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: 70px;
 }
 
 .hero-split-layout.animate .hero-overlay-content {
@@ -921,11 +924,12 @@ h3 {
 .hero-overlay-text {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.5;
     color: #1a1a1a;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    margin-right: 120px;
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(-30px);
     transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -941,10 +945,10 @@ h3 {
     background: #4facfe;
     color: #ffffff;
     border: 2px solid #4facfe;
-    padding: 12px 24px;
+    padding: 10px 20px;
     border-radius: 50px;
     font-family: 'Inter', sans-serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -975,17 +979,19 @@ h3 {
     }
     
     .hero-left-section {
-        flex: 0 0 50%;
+        flex: 0 0 30%;
         padding: 2rem;
+        padding-top: 3rem;
     }
     
     .hero-right-section {
-        flex: 0 0 50%;
+        flex: 0 0 70%;
     }
     
     .hero-heading {
         font-size: 2.5rem;
         text-align: center;
+        margin-top: 0;
     }
     
     .hero-overlay-content {
