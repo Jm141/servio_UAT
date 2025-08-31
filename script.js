@@ -1,19 +1,13 @@
 // Splash Screen Management
 document.addEventListener('DOMContentLoaded', function() {
     const splashScreen = document.getElementById('splashScreen');
-    const geometricHero = document.querySelector('.geometric-hero');
+    // Geometric hero is now static and doesn't need JavaScript manipulation
     const heroSection = document.querySelector('.hero');
     
-    console.log('Elements found:', { splashScreen, geometricHero, heroSection });
+    console.log('Elements found:', { splashScreen, heroSection });
     
-    // Ensure elements start completely hidden
-    if (geometricHero) {
-        geometricHero.style.opacity = '0';
-        geometricHero.style.transform = 'scale(0.95)';
-        geometricHero.style.visibility = 'hidden';
-        geometricHero.style.pointerEvents = 'none';
-        console.log('Set geometric-hero to hidden state');
-    }
+    // Geometric hero is now static and visible by default
+    console.log('Geometric hero section is now visible');
     
     if (heroSection) {
         heroSection.style.opacity = '0';
@@ -28,36 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Starting splashscreen fade-out...');
         splashScreen.classList.add('fade-out');
         
-        // After splashscreen fade-out animation completes, fade in the geometric-hero
+        // After splashscreen fade-out animation completes, show the geometric-hero section and fade in the hero section
         setTimeout(() => {
             console.log('Removing splashscreen and starting fade-ins...');
             // Remove splash screen from DOM
             splashScreen.remove();
             
-            // Fade in the geometric-hero section
-            if (geometricHero) {
-                console.log('Adding visible class to geometric-hero...');
-                
-                // Temporarily disable all transitions to prevent conflicts
-                geometricHero.style.transition = 'none';
-                
-                // Force the styles with inline CSS to override any conflicts
-                geometricHero.style.opacity = '1';
-                geometricHero.style.transform = 'scale(1)';
-                geometricHero.style.visibility = 'visible';
-                geometricHero.style.pointerEvents = 'auto';
-                
-                // Re-enable transitions after a brief moment
-                setTimeout(() => {
-                    geometricHero.style.transition = 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
-                }, 50);
-                
-                geometricHero.classList.add('visible');
-                console.log('Geometric-hero classes:', geometricHero.className);
-                console.log('Applied inline styles to geometric-hero');
-            } else {
-                console.error('Geometric-hero element not found!');
-            }
+            // Geometric hero is now static and visible by default
+            console.log('Geometric hero section is now visible');
             
             // Fade in the hero section after a short delay
             setTimeout(() => {
@@ -82,13 +54,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.log('Hero section classes:', heroSection.className);
                     console.log('Applied inline styles to hero section');
                     
+                    // Trigger typewriter animation after hero section is visible
+                    setTimeout(() => {
+                        const typewriterText = heroSection.querySelector('.typewriter-text');
+                        if (typewriterText) {
+                            typewriterText.style.animation = 'none';
+                            typewriterText.offsetHeight; // Trigger reflow
+                            typewriterText.style.animation = null;
+                            console.log('Typewriter animation triggered');
+                        }
+                    }, 500); // Small delay to ensure smooth transition
+                    
                     // Mark splashscreen fade-in as complete and enable parallax
                     splashscreenFadeInComplete = true;
                     console.log('Splashscreen fade-in complete - parallax enabled');
                 } else {
                     console.error('Hero section element not found!');
                 }
-            }, 1000); // 1 second delay after geometric-hero starts fading in
+            }, 1000); // 1 second delay after geometric-hero section becomes visible
         }, 1500);
     }, 4100);
 });
@@ -98,6 +81,46 @@ const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
+
+// Typewriter animation trigger on scroll
+let typewriterTriggered = false;
+
+function triggerTypewriterAnimation() {
+    if (typewriterTriggered) return;
+    
+    const typewriterText = document.querySelector('.typewriter-text');
+    if (typewriterText) {
+        typewriterText.style.animation = 'none';
+        typewriterText.offsetHeight; // Trigger reflow
+        typewriterText.style.animation = null;
+        typewriterText.classList.add('typewriter-active');
+        typewriterTriggered = true;
+        console.log('Typewriter animation triggered on scroll');
+    }
+}
+
+// Intersection Observer for hero section
+const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !typewriterTriggered) {
+            // Small delay to ensure smooth animation
+            setTimeout(() => {
+                triggerTypewriterAnimation();
+            }, 300);
+        }
+    });
+}, {
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
+});
+
+// Observe hero section for scroll-triggered animation
+document.addEventListener('DOMContentLoaded', function() {
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        heroObserver.observe(heroSection);
+    }
+});
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -125,13 +148,13 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all sections for animations (EXCLUDING geometric-hero and hero)
+// Observe all sections for animations (EXCLUDING hero)
 document.addEventListener('DOMContentLoaded', function() {
-    // Add animation attributes to sections (excluding geometric-hero and hero)
+    // Add animation attributes to sections (excluding hero)
     const sections = document.querySelectorAll('section');
     sections.forEach((section, index) => {
-        // Skip geometric-hero and hero sections completely
-        if (section.classList.contains('geometric-hero') || section.classList.contains('hero')) {
+        // Skip hero section completely
+        if (section.classList.contains('hero')) {
             console.log('Skipping section for scroll animations:', section.className);
             return; // Skip this section entirely
         }
@@ -144,15 +167,15 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
     
-    // Add specific animations to key elements (only if they're not in geometric-hero or hero)
+    // Add specific animations to key elements (only if they're not in hero)
     const heroTitle = document.querySelector('.hero-content h1');
-    if (heroTitle && !heroTitle.closest('.geometric-hero') && !heroTitle.closest('.hero')) {
+    if (heroTitle && !heroTitle.closest('.hero')) {
         heroTitle.setAttribute('data-animate', 'fade-in');
         observer.observe(heroTitle);
     }
     
     const heroButtons = document.querySelector('.hero-buttons');
-    if (heroButtons && !heroButtons.closest('.geometric-hero') && !heroButtons.closest('.hero')) {
+    if (heroButtons && !heroButtons.closest('.hero')) {
         heroButtons.setAttribute('data-animate', 'scale-in');
         observer.observe(heroButtons);
     }
@@ -281,7 +304,7 @@ if ('IntersectionObserver' in window) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Skip sections that are already visible from splashscreen
-                if (!entry.target.classList.contains('geometric-hero') && !entry.target.classList.contains('hero')) {
+                if (!entry.target.classList.contains('hero')) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
@@ -289,9 +312,9 @@ if ('IntersectionObserver' in window) {
         });
     }, observerOptions);
     
-    // Observe all sections for fade-in effect (excluding geometric-hero and hero)
+    // Observe all sections for fade-in effect (excluding hero)
     document.querySelectorAll('section').forEach(section => {
-        if (!section.classList.contains('geometric-hero') && !section.classList.contains('hero')) {
+        if (!section.classList.contains('hero')) {
             section.style.opacity = '0';
             section.style.transform = 'translateY(20px)';
             section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -386,31 +409,17 @@ window.addEventListener('scroll', () => {
 
     testButton.addEventListener('click', () => {
         console.log('Manual test button clicked');
-        const geometricHero = document.querySelector('.geometric-hero');
         const heroSection = document.querySelector('.hero');
         
-        if (geometricHero) {
-            console.log('Manually adding visible class to geometric-hero');
-            geometricHero.classList.add('visible');
+        if (heroSection) {
+            console.log('Manually adding visible class to hero section');
+            heroSection.classList.add('visible');
             // Force the styles with inline CSS to override any conflicts
-            geometricHero.style.opacity = '1';
-            geometricHero.style.transform = 'scale(1)';
-            geometricHero.style.visibility = 'visible';
-            geometricHero.style.pointerEvents = 'auto';
-            console.log('Applied inline styles to geometric-hero');
+            heroSection.style.opacity = '1';
+            heroSection.style.transform = 'translateY(0)';
+            heroSection.style.visibility = 'visible';
+            heroSection.style.pointerEvents = 'auto';
+            console.log('Applied inline styles to hero section');
         }
-        
-        setTimeout(() => {
-            if (heroSection) {
-                console.log('Manually adding visible class to hero section');
-                heroSection.classList.add('visible');
-                // Force the styles with inline CSS to override any conflicts
-                heroSection.style.opacity = '1';
-                heroSection.style.transform = 'translateY(0)';
-                heroSection.style.visibility = 'visible';
-                heroSection.style.pointerEvents = 'auto';
-                console.log('Applied inline styles to hero section');
-            }
-        }, 1000);
     });
     document.body.appendChild(testButton);
