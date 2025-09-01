@@ -11,6 +11,38 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <!-- SPLASH SCREEN -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-cut-left"></div>
+        <div class="splash-content">
+            <div class="splash-logo">
+                <div class="logo-animation">
+                    <span class="letter">C</span>
+                    <span class="letter">O</span>
+                    <span class="letter">M</span>
+                    <span class="letter">M</span>
+                    <span class="letter">U</span>
+                    <span class="letter">N</span>
+                    <span class="letter">I</span>
+                    <span class="letter">T</span>
+                    <span class="letter">Y</span>
+                </div>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+        <div class="splash-cut-right"></div>
+    </div>
+
+    <!-- WELCOME MESSAGE -->
+    <div class="welcome-message" id="welcomeMessage" style="display: none;">
+        <div class="container">
+            <h2>Welcome to the Servio Community</h2>
+            <p>Join us in building digital sovereignty across the Philippine countryside</p>
+        </div>
+    </div>
+
     <!-- HEADER -->
     <header class="header">
         <div class="header-content">
@@ -25,7 +57,7 @@
                 <span></span>
             </button>
             <nav class="main-nav" id="main-nav">
-                <a href="index.html">Servio Home</a>
+                <a href="index.html">Servio Home </a>
                 <a href="community.html" class="active">Community</a>
                 <a href="#events" class="nav-link">Events</a>
                 <a href="#blog" class="nav-link">Blog</a>
@@ -36,7 +68,6 @@
             </nav>
         </div>
     </header>
-<!--  -->
 
     <!-- HERO SECTION -->
     <section class="hero community-hero" data-aos="fade-in" data-aos-delay="200">
@@ -372,6 +403,31 @@
             duration: 800,
             easing: 'ease-in-out',
             once: true
+        });
+
+        // Splash screen functionality
+        window.addEventListener('load', function() {
+            const splashScreen = document.getElementById('splashScreen');
+            const welcomeMessage = document.getElementById('welcomeMessage');
+            
+            // Hide splash screen after 3 seconds
+            setTimeout(function() {
+                splashScreen.style.opacity = '0';
+                splashScreen.style.transform = 'scale(0.9)';
+                
+                setTimeout(function() {
+                    splashScreen.style.display = 'none';
+                    welcomeMessage.style.display = 'block';
+                    
+                    // Hide welcome message after 2 seconds
+                    setTimeout(function() {
+                        welcomeMessage.style.opacity = '0';
+                        setTimeout(function() {
+                            welcomeMessage.style.display = 'none';
+                        }, 500);
+                    }, 2000);
+                }, 500);
+            }, 3000);
         });
 
         // Smooth scrolling for section navigation
