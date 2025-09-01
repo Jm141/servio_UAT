@@ -34,140 +34,23 @@
 .typewriter-text {
     display: inline-block;
     position: relative;
-    color: transparent;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-    background-size: 400% 400%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    animation: gradientShift 3s ease-in-out infinite;
+    color: #1a1a1a;
     font-weight: 600;
     letter-spacing: 0.5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Ensure text doesn't get cut off */
-    white-space: normal;
-    word-wrap: break-word;
-    max-width: 100%;
-}
-
-/* Cursor blink effect */
-.typewriter-text::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    color: #1D1D1F;
+    /* Simple typewriter animation */
     overflow: hidden;
     border-right: 3px solid #667eea;
-    animation: typewriter 3s steps(50) forwards, cursorBlink 1s infinite;
-    animation-delay: 0.5s;
-    white-space: nowrap;
+    white-space: normal;
+    animation: typewriter 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    animation-fill-mode: forwards;
+    /* Ensure text fits properly */
+    max-width: 100%;
+    line-height: 1.2;
 }
 
-.typewriter-text::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, 
-        rgba(102, 126, 234, 0.1) 0%, 
-        rgba(118, 75, 162, 0.1) 25%, 
-        rgba(240, 147, 251, 0.1) 50%, 
-        rgba(245, 87, 108, 0.1) 75%, 
-        rgba(79, 172, 254, 0.1) 100%);
-    filter: blur(20px);
-    opacity: 0;
-    animation: gemGlow 3s ease-in-out infinite;
-    animation-delay: 1s;
-}
 
-@keyframes typewriter {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
 
-@keyframes cursorBlink {
-    0%, 50% {
-        border-right-color: #667eea;
-    }
-    51%, 100% {
-        border-right-color: transparent;
-    }
-}
 
-@keyframes gradientShift {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
-@keyframes gemGlow {
-    0%, 100% {
-        opacity: 0;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.6;
-        transform: scale(1.05);
-    }
-}
-
-/* Gem sparkle effects */
-.gem-sparkle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 50%;
-    opacity: 0;
-    animation: sparkle 2s ease-in-out infinite;
-    box-shadow: 0 0 10px rgba(102, 126, 234, 0.6);
-}
-
-.gem-sparkle:nth-child(1) {
-    top: -10px;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.gem-sparkle:nth-child(2) {
-    top: -5px;
-    right: 15%;
-    animation-delay: 0.5s;
-}
-
-.gem-sparkle:nth-child(3) {
-    bottom: -8px;
-    left: 20%;
-    animation-delay: 1s;
-}
-
-.gem-sparkle:nth-child(4) {
-    bottom: -3px;
-    right: 25%;
-    animation-delay: 1.5s;
-}
-
-@keyframes sparkle {
-    0%, 100% {
-        opacity: 0;
-        transform: scale(0) rotate(0deg);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1) rotate(180deg);
-    }
-}
 
 /* Enhanced hero heading styles */
 .hero h1 {
@@ -847,7 +730,7 @@ h3 {
 }
 
 .hero-left-section {
-    flex: 0 0 30%;
+    flex: 0 0 40%;
     background-color: #ffffff;
     display: flex;
     align-items: flex-start;
@@ -864,17 +747,20 @@ h3 {
     font-family: 'Inter', sans-serif;
     font-size: 3.5rem;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.2;
     color: #000000;
     text-align: left;
-    max-width: 600px;
+    max-width: 800px;
     width: 100%;
     opacity: 0;
     transform: translateX(-50px);
     transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: -2rem;
     position: relative;
-    min-height: 200px;
+    min-height: 250px;
+    /* Ensure text doesn't get cut off */
+    overflow: visible;
+    word-wrap: break-word;
 }
 
 .hero-split-layout.animate .hero-heading {
@@ -996,12 +882,33 @@ h3 {
     animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Typewriter animation keyframes */
+@keyframes typewriter {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #667eea;
+    }
+}
+
 
 
 
 
 .hero-right-section {
-    flex: 0 0 70%;
+    flex: 0 0 60%;
     position: relative;
     overflow: hidden;
 }
@@ -1195,8 +1102,9 @@ h3 {
     font-weight: 300;
     line-height: 1.3;
     letter-spacing: -1px;
-    white-space: nowrap;
-    overflow: hidden;
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
 }
 
 @media (max-width: 768px) {
@@ -2474,6 +2382,11 @@ h3 {
     .typewriter-text {
         font-size: 2.5rem;
         text-align: center;
+        /* Ensure typewriter works on mobile */
+        white-space: normal;
+        overflow: visible;
+        border-right: none;
+        animation: none;
     }
 }
 
