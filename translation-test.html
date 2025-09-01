@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Effect Test</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-heading {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #000000;
+            text-align: left;
+            max-width: 500px;
+            position: relative;
+            min-height: 200px;
+            margin-bottom: 2rem;
+        }
+        
+        .translation-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+        
+        .translation-text.active {
+            position: relative;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .translation-toggle {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 0.75rem 1.5rem;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            overflow: hidden;
+            position: relative;
+            min-width: 60px;
+        }
+        
+        .translation-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .translation-toggle:active {
+            transform: translateY(0);
+        }
+        
+        .translation-toggle .toggle-text {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .translation-toggle .toggle-text:last-child {
+            opacity: 0;
+            transform: translateY(-100%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .translation-toggle[data-current="hil"] .toggle-text:first-child {
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        
+        .translation-toggle[data-current="hil"] .toggle-text:last-child {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .description {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border-left: 4px solid #667eea;
+        }
+        
+        .description h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Translation Effect Demo</h1>
+        
+        <div class="hero-heading">
+            <span class="translation-text active" data-lang="en">Closer than<br>ever<br>to your next<br>adventure</span>
+            <span class="translation-text" data-lang="hil">Lapit na<br>lang<br>sa imo<br>sunod nga<br>adventure</span>
+        </div>
+        
+        <button class="translation-toggle" onclick="toggleTranslation()" data-current="en">
+            <span class="toggle-text">EN</span>
+            <span class="toggle-text">HI</span>
+        </button>
+        
+        <div class="description">
+            <h3>How it works:</h3>
+            <p>Click the toggle button to switch between English and Hiligaynon translations. The text smoothly fades and slides between languages with a beautiful transition effect.</p>
+            <p><strong>English:</strong> "Closer than ever to your next adventure"</p>
+            <p><strong>Hiligaynon:</strong> "Lapit na lang sa imo sunod nga adventure"</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleTranslation() {
+            const englishText = document.querySelector('.translation-text[data-lang="en"]');
+            const hiligaynonText = document.querySelector('.translation-text[data-lang="hil"]');
+            const toggleButton = document.querySelector('.translation-toggle');
+            
+            if (englishText.classList.contains('active')) {
+                // Switch to Hiligaynon
+                englishText.classList.remove('active');
+                hiligaynonText.classList.add('active');
+                toggleButton.setAttribute('data-current', 'hil');
+            } else {
+                // Switch to English
+                hiligaynonText.classList.remove('active');
+                englishText.classList.add('active');
+                toggleButton.setAttribute('data-current', 'en');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -66,7 +66,14 @@
     <section class="geometric-hero">
         <div class="hero-split-layout">
             <div class="hero-left-section">
-                <h1 class="hero-heading">Closer than<br>ever<br>to your next<br>adventure</h1>
+                <h1 class="hero-heading">
+                    <span class="translation-text active" data-lang="en">Closer than<br>ever<br>to your next<br>adventure</span>
+                    <span class="translation-text" data-lang="hil">Lapit na<br>lang<br>sa imo<br>sunod nga<br>adventure</span>
+                </h1>
+                <button class="translation-toggle" onclick="toggleTranslation()" data-current="en">
+                    <span class="toggle-text">EN</span>
+                    <span class="toggle-text">HI</span>
+                </button>
             </div>
             <div class="hero-right-section">
                 <img src="image/bg.png" alt="Adventure Background" class="hero-background-image">
@@ -110,187 +117,253 @@
 
     <!-- ABOUT US SECTION -->
     <div class="about-section" id="about-us">
-        <div class="about-grid">
-            <!-- Large left block -->
-            <div class="about-main-block">
-                <div class="about-number">Our Story</div>
-                <!-- <div class="about-category">Technology Solutions</div> -->
-                <h2 class="about-title">SERVIO TECHNOLOGIES</h2>
-                <p class="about-narrative">SERVIO Technologies is a proudly Filipino-owned IT company founded in 2019 in Roxas City, Capiz, with a clear mission: to make digital solutions simple, smart, and affordable for small and medium-sized businesses in the Philippines.</p>
-                <p class="about-narrative">Backed by major investors like Mega Global Corporation and Jadel Holdings, SERVIO has grown rapidly, offering a full suite of business tools that include payroll, HR, accounting, point-of-sale systems, cybersecurity, and enterprise-level software—everything a modern business needs to thrive in the digital age. As seen on CNN Philippines' The Final Pitch, SERVIO has gained national recognition for its commitment to helping local entrepreneurs succeed.</p>
-                <p class="about-narrative">Whether you're a startup, a retail business, or a growing enterprise, SERVIO's cloud-based solutions are designed to streamline operations and protect your data without the high costs usually associated with tech. With practical packages, local support, and a deep understanding of the Philippine market, SERVIO is redefining how businesses go digital—one smart solution at a time. If you're ready to grow faster and work smarter, SERVIO Technologies is your trusted partner in the digital transformation journey.</p>
-           
-                <!-- <p class="about-subtitle">Making digital solutions simple, smart, and affordable for Filipino businesses since 2019.</p> -->
+        <!-- Translation Toggle for About Section -->
+        <div class="about-translation-toggle-container">
+            <button class="about-translation-toggle" onclick="toggleAboutTranslation()" data-current="en">
+                <span class="toggle-text">EN</span>
+                <span class="toggle-text">HI</span>
+            </button>
+
+        </div>
+        
+        <!-- Section 1: The Origin -->
+        <div class="origin-section" data-aos="fade-up" data-aos-duration="800">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="translation-text active" data-lang="en">The Origin: Born from the Gaps Between Cities and Systems</span>
+                    <span class="translation-text" data-lang="hil">Ang Pagsugod: Ginbata bangud sang Kakulang sang Koneksyon sa Tunga sang Probinsya kag Sistema</span>
+                </h2>
             </div>
-            
-            <!-- Right column with smaller blocks -->
-            <div class="about-side-content">
-                <!-- <div class="about-block">
-                    <div class="block-category">Our Mission</div>
-                    <h3 class="block-title">Empowering Local Business</h3>
-                    <p class="block-description">We're committed to helping small and medium-sized businesses in the Philippines thrive in the digital age through practical, affordable technology solutions.</p>
-                </div> -->
-                
-                <div class="about-block">
-                    <div class="block-category">Our Approach</div>
-                    <h3 class="block-title">Cloud-Based Excellence</h3>
-                    <p class="block-description">From payroll and HR to accounting and cybersecurity, our comprehensive suite of business tools streamlines operations while protecting your valuable data.</p>
+            <div class="origin-content">
+                <p class="origin-narrative">
+                    <span class="translation-text active" data-lang="en">Servio didn't start in a glass tower or tech hub—it was born from the glaring disconnect between provincial realities and digital possibilities.</span>
+                    <span class="translation-text" data-lang="hil">Wala nagsugod ang Servio sa matay-og nga building ukon kilala nga teknolohiya nga lugar — kundi sa makita nga kalain-lain sang kahimtangan sang mga taga-syudad kag taga-probinsya.</span>
+                </p>
+                <p class="origin-narrative">
+                    <span class="translation-text active" data-lang="en">Its founders — <strong>Joey Gurango</strong>, <strong>Ton Ancheta</strong>, and <strong>James Olarte</strong> — saw it firsthand: local governments wrestling with outdated or no software, rural businesses overwhelmed by expensive complexity, and talented IT workers forced to leave their hometowns behind.</span>
+                    <span class="translation-text" data-lang="hil">Ang mga nagtukod sini — sanday <strong>Joey Gurango</strong>, <strong>Ton Ancheta</strong>, kag <strong>James Olarte</strong> — nakasaksi mismo kung paano nagaantos ang mga lokal nga panggobyerno nga nagasalig sa manual nga proseso, mga negosyo sa kabukiran nga nabudlayan maggamit sang komplikado kag mahal nga software, kag mga abilidad nga taga-bukid nga napilitan maghalin sa ila lugar para lang makatrabaho.</span>
+                </p>
+                <p class="origin-narrative">
+                    <span class="translation-text active" data-lang="en">So instead of forcing a broken model to fit, they help them adopt a new one.</span>
+                    <span class="translation-text" data-lang="hil">Imbes nga ipilit nga gamiton ang sistema nga indi nami para sa ila, ginbuligan nila nga magamit ang masangko nga paagi.</span>
+                </p>
+                <div class="tech-stack">
+                    <p>
+                        <span class="translation-text active" data-lang="en"><strong>ERPNext</strong> became the core: open-source, modular, people-centered.</span>
+                        <span class="translation-text" data-lang="hil">Ginbase ang Servio sa <strong>ERPNext</strong> — isa ka bukas nga sistema nga modular, hapos sabton, kag tawo ang ginapamangkot.</span>
+                    </p>
+                    <p>
+                        <span class="translation-text active" data-lang="en"><strong>LarkSuite</strong> added the layer of real-time, intelligent collaboration — light, agile, and built for distributed teams.</span>
+                        <span class="translation-text" data-lang="hil">Gin-updan ini sang <strong>LarkSuite</strong> — isa ka himo-himo nga para sa buhi kag madinalag-on nga pag estoryahanay bisan layo ang tagsa-tagsa, kag hapos gamiton sang mga grupo nga nagaubra sa iban-iban nga lugar.</span>
+                    </p>
                 </div>
-                
-                <div class="about-block">
-                    <div class="block-category">Our Recognition</div>
-                    <h3 class="block-title">Featured on CNN Philippines</h3>
-                    <p class="block-description">As seen on CNN Philippines' The Final Pitch, SERVIO has gained national recognition for our commitment to helping local entrepreneurs succeed.</p>
-                </div>
-                
-                <div class="about-block">
-                    <div class="block-category">Our Promise</div>
-                    <h3 class="block-title">Local Support, Global Quality</h3>
-                    <p class="block-description">With practical packages, local support, and deep understanding of the Philippine market, we're redefining how businesses go digital.</p>
-                </div>
+                <p class="origin-conclusion">
+                    <span class="translation-text active" data-lang="en">Servio isn't just a company. It's a response. A movement. A declaration that digital excellence shouldn't be gated by geography.</span>
+                    <span class="translation-text" data-lang="hil">Ang Servio, indi lang isa ka negosyo. Isa ini ka sabat. Isa ka panawagan. Isa ka pagpamatood nga ang kaayuhan sang teknolohiya indi lang para sa mga tawo sa siyudad kundi para man sa tanan — bisan diin ka man.</span>
+                </p>
             </div>
         </div>
-    </div>
-    <br><br>
 
-            <!-- Section 2: Mission & Vision -->
-            <div class="mission-vision-grid">
-                <div class="mission-card" data-aos="fade-in" data-aos-delay="200">
-                    <div class="card-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Our Mission</h3>
-                    <p>To empower the Philippine countryside with open, intelligent, and affordable digital tools — enabling sustainable growth across LGUs, cooperatives, and local enterprises.</p>
-                </div>
-                <div class="vision-card" data-aos="fade-in" data-aos-delay="400">
-                    <div class="card-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Our Vision</h3>
-                    <p>A digitally sovereign Philippines where every local government, rural business, and IT professional thrives — equipped with the tools, skills, and systems to shape their own future.</p>
-                </div>
+        <!-- Section 2: Why Servio Exists -->
+        <div class="mission-section" data-aos="fade-up" data-aos-duration="800">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="translation-text active" data-lang="en">Why Servio Exists: Digital Empowerment, Rooted in the Countryside</span>
+                    <span class="translation-text" data-lang="hil">Ngaa May Servio: Teknolohiya nga Masarangan, Halin kag Para sa Probinsya</span>
+                </h2>
             </div>
-
-            <!-- Section 3: Meet the Founders -->
-            <div class="founders-section" data-aos="fade-up" data-aos-duration="800">
-                <h3 class="founders-headline" data-aos="fade-in" data-aos-delay="200">Led by Innovators. Rooted in Service.</h3>
-                <p class="founders-intro" data-aos="fade-in" data-aos-delay="300">Behind Servio are industry leaders with decades of experience in enterprise technology, digital transformation, and systems thinking.</p>
-                <div class="founders-grid">
-                    <div class="founder-card" data-aos="fade-in" data-aos-delay="400">
-                        <div class="founder-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h4>Joey Gurango</h4>
-                        <p>Software industry veteran and advocate of digital empowerment</p>
-                    </div>
-                    <div class="founder-card" data-aos="fade-in" data-aos-delay="500">
-                        <div class="founder-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h4>Ton Ancheta</h4>
-                        <p>Champion of rural innovation and system design</p>
-                    </div>
-                    <div class="founder-card" data-aos="fade-in" data-aos-delay="600">
-                        <div class="founder-avatar">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h4>James Olarte</h4>
-                        <p>Community-driven leader in digital adoption and change management</p>
-                    </div>
-                </div>
-                <p class="founders-footer" data-aos="fade-in" data-aos-delay="700">Their leadership reflects our values: local-first, open-source, and built for real-world impact.</p>
+            <div class="mission-content">
+                <p class="mission-intro">
+                    <span class="translation-text active" data-lang="en">Servio exists to bring technology to people — wherever they are.</span>
+                    <span class="translation-text" data-lang="hil">Ang misyon sang Servio ara sa tinutuyo nga dal-on ang teknolohiya sa tagsa ka Pilipino, bisan diin siya nga bahin sang pungsod.</span>
+                </p>
+                <p class="mission-statement">
+                    <span class="translation-text active" data-lang="en">The Servio's mission is bold, but clear:</span>
+                    <span class="translation-text" data-lang="hil">Ang iya katuyoan klaro guid:</span>
+                </p>
+                <ul class="mission-list">
+                    <li>
+                        <span class="translation-text active" data-lang="en">Help Filipino organizations thrive through ethical, open platforms like ERPNext and LarkSuite.</span>
+                        <span class="translation-text" data-lang="hil">Buligan ang mga organisasyon nga Pilipino nga mag-uswag gamit ang bukas, matinlo, kag patas nga plataporma pareho sang ERPNext kag LarkSuite.</span>
+                    </li>
+                    <li>
+                        <span class="translation-text active" data-lang="en">Cultivate provincial tech talent and keep genius rooted in the countryside.</span>
+                        <span class="translation-text" data-lang="hil">Padayunon kag pa-uswagon ang teknolohikal nga abilidad sang mga taga-kabukiran — agud indi na sila kinahanglan maghalin sa ila banwa para lang makapangita obra.</span>
+                    </li>
+                    <li>
+                        <span class="translation-text active" data-lang="en">Deliver modern, open-source systems to Rural Business and LGUs — affordable, transparent, and free from vendor lock-in.</span>
+                        <span class="translation-text" data-lang="hil">Ihatag sa mga lokal nga panggobyerno kag mga ginagmay nga negosyo ang moderno kag masarangan nga sistema — nga wala nagapugong sa ila, hapos gamiton, kag sila mismo ang may gahum magdumala.</span>
+                    </li>
+                </ul>
+                <p class="mission-conclusion">
+                    <span class="translation-text active" data-lang="en">Because in the countryside, digital transformation means more than tools — it means sovereignty, service, and self-sufficiency.</span>
+                    <span class="translation-text" data-lang="hil">Kay sa Probinsya ang bag-o paagi sa teknolohiya indi lang para mapadasig ang trabaho — kundi isa ini ka tikang padulong sa pagpanag-iya, matinud-anon nga serbisyo, kag pangabuhi nga may katahum kag dignidad.</span>
+                </p>
             </div>
+        </div>
 
-            <!-- Section 4: Our Journey -->
-            <div class="journey-section" data-aos="fade-up" data-aos-duration="800">
-                <h3 class="journey-headline" data-aos="fade-in" data-aos-delay="200">From Prototypes to Provinces</h3>
-                <div class="journey-timeline">
-                    <div class="timeline-item" data-aos="fade-in" data-aos-delay="300">
-                        <div class="timeline-marker">2020</div>
-                        <div class="timeline-content">
-                            <h4>Eastwood Beginnings</h4>
-                            <p>Started with a vision to democratize technology</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-aos="fade-in" data-aos-delay="400">
-                        <div class="timeline-marker">2022</div>
-                        <div class="timeline-content">
-                            <h4>First Provincial Partners</h4>
-                            <p>Began serving LGUs and cooperatives in the countryside</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-aos="fade-in" data-aos-delay="500">
-                        <div class="timeline-marker">2024</div>
-                        <div class="timeline-content">
-                            <h4>Digital Countryside Movement</h4>
-                            <p>Expanding across provinces, empowering communities</p>
-                        </div>
-                    </div>
-                </div>
+        <!-- Section 3: The Customer Journey -->
+        <div class="journey-section" data-aos="fade-up" data-aos-duration="800">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="translation-text active" data-lang="en">The Customer Journey: From Stuck to Sovereign</span>
+                    <span class="translation-text" data-lang="hil">Ang Hinun-anon sang Kliyente: Halin sa Pagpangabudlay, Padulong sa Pagpanag-iya kag Pag-uswag</span>
+                </h2>
             </div>
+            <div class="journey-content">
+                <p class="journey-intro">
+                    <span class="translation-text active" data-lang="en">Provincial organizations come to Servio when they feel trapped — by slow processes, high costs, or inflexible tools. Whether it's a struggling cooperative, an overwhelmed city hall, or a rural business trying to scale, the story is the same: they need for clarity, capability, and care.</span>
+                    <span class="translation-text" data-lang="hil">Nagapalapit ang mga organisasyon sa kabukiran sa Servio kun daw wala na sila sang kasulhayan — bangud sang kapigaduhon sang ila sistema, kataas sang gasto, ukon indi na nila masarangan kag masabtan ang ila ginagamit. Kun isa man ini ka kooperatiba nga nagaantos, munisipyo nga ginatambakan sang papeles, ukon negosyo nga naga pangabuhi sa uma nga gusto mag-uswag — isa lang ang ila ginapangita: kasulhayan, pagsalig, kag pagbulig nga may kasingkasing kag pag-intindi.</span>
+                </p>
+                <p class="journey-approach">
+                    <span class="translation-text active" data-lang="en">There's no promise of magic — only open-source power and people-first service.</span>
+                    <span class="translation-text" data-lang="hil">Wala naga-promisa ang Servio sang milagro — kundi kasaligan nga kusog halin sa bukas nga teknolohiya kag serbisyo nga matuod nga naga-una sa tawo.</span>
+                </p>
+                <p class="journey-tools">
+                    <span class="translation-text active" data-lang="en">With tools like ERPNext and LarkSuite, Servio provides:</span>
+                    <span class="translation-text" data-lang="hil">Paagi sa ERPNext kag LarkSuite, ginahatag sang Servio ang:</span>
+                </p>
+                <ul class="journey-list">
+                    <li>
+                        <span class="translation-text active" data-lang="en">Smart systems for finance, HR, procurement, and more</span>
+                        <span class="translation-text" data-lang="hil">Maayo nga sistema para sa buluhaton pareho sang kwarta, mga empleyado, pagpamakal, kag iban pa</span>
+                    </li>
+                    <li>
+                        <span class="translation-text active" data-lang="en">Collaboration tools that turn remote work into strength</span>
+                        <span class="translation-text" data-lang="hil">Mga gamit para sa binuligay nga trabaho, bisan layo ang tagsa ka miyembro sang grupo</span>
+                    </li>
+                    <li>
+                        <span class="translation-text active" data-lang="en">Training and support so users don't just adopt tech — they own it</span>
+                        <span class="translation-text" data-lang="hil">Panghanas kag bulig para indi lang sila makagamit sang teknolohiya kundi mahibaluan, maangkon, kag mangin tag-iya sini</span>
+                    </li>
+                </ul>
+                <p class="journey-conclusion">
+                    <span class="translation-text active" data-lang="en">Working with Servio doesn't just mean going digital.<br>It means becoming digitally sovereign.</span>
+                    <span class="translation-text" data-lang="hil">Kun mag-upod ka sa Servio, indi lang ini buot silingon nga "may teknolohiya ka na."<br>Kundi nakahibalo ka na, may kumpiyansa ka na, kag may gahum ka na magdesisyon para sa imo kaugalingon kag para sa kaayuhan sang imo komunidad.</span>
+                </p>
+            </div>
+        </div>
 
-            <!-- Section 5: What We Stand For -->
-            <div class="values-section" data-aos="fade-up" data-aos-duration="800">
-                <h3 class="values-headline" data-aos="fade-in" data-aos-delay="200">What We Stand For</h3>
+        <!-- Section 4: The Values -->
+        <div class="values-section" data-aos="fade-up" data-aos-duration="800">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="translation-text active" data-lang="en">The Values: What Drives Servio</span>
+                    <span class="translation-text" data-lang="hil">Ang mga Prinsipyo nga Ginatindugan sang Servio</span>
+                </h2>
+            </div>
+            <div class="values-content">
+                <p class="values-intro">
+                    <span class="translation-text active" data-lang="en">Servio is guided by a core belief: real transformation happens when people are empowered to lead it themselves.</span>
+                    <span class="translation-text" data-lang="hil">Ang Servio may hugot nga pagtuo: Ang matuod-tuod nga kauswagan nagaumpisa kun ang tawo mismo ang nagapanguna kag may gahum sa iya ginhawa.</span>
+                </p>
+                <p class="values-statement">
+                    <span class="translation-text active" data-lang="en">In every decision — from the tools chosen to the partners served — the values serve as the compass:</span>
+                    <span class="translation-text" data-lang="hil">Ini nga pagtuo nagatuytoy sang tanan nila nga desisyon:</span>
+                </p>
                 <div class="values-grid">
                     <div class="value-card" data-aos="fade-in" data-aos-delay="300">
                         <div class="value-icon">
-                            <i class="fas fa-door-open"></i>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h4>Openness</h4>
-                        <p>We believe in open-source platforms and transparent partnerships</p>
+                        <h4>
+                            <span class="translation-text active" data-lang="en">Trust and Transparency</span>
+                            <span class="translation-text" data-lang="hil">Pagsalig kag Katinlo</span>
+                        </h4>
+                        <p>
+                            <span class="translation-text active" data-lang="en">An open-source approach ensures that clients own their data, understand their systems, and are never locked in. Servio builds trust through clarity, not complexity.</span>
+                            <span class="translation-text" data-lang="hil">Ginapabakod sang bukas nga sistema nga ikaw ang tag-iya sang imo data, kabalo ka sa imo ginagamit, kag wala ka ginapilit ukon ginahikot.</span>
+                        </p>
                     </div>
                     <div class="value-card" data-aos="fade-in" data-aos-delay="400">
                         <div class="value-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h4>
+                            <span class="translation-text active" data-lang="en">Clarity over complexity</span>
+                            <span class="translation-text" data-lang="hil">Klaro kaysa Komplikado</span>
+                        </h4>
+                        <p>
+                            <span class="translation-text active" data-lang="en">Designing solutions that are understandable, transparent, and built for real users — not just IT teams.</span>
+                            <span class="translation-text" data-lang="hil">Ang solusyon dapat hapos sabton, hapos gamiton, kag para sa tawo mismo — indi lang para sa eksperto.</span>
+                        </p>
+                    </div>
+                    <div class="value-card" data-aos="fade-in" data-aos-delay="500">
+                        <div class="value-icon">
                             <i class="fas fa-hands-helping"></i>
                         </div>
-                        <h4>Empowerment</h4>
-                        <p>We train and trust local teams to lead digital transformation</p>
+                        <h4>
+                            <span class="translation-text active" data-lang="en">Service over software</span>
+                            <span class="translation-text" data-lang="hil">Serbisyo una sa Tanan</span>
+                        </h4>
+                        <p>
+                            <span class="translation-text active" data-lang="en">Prioritizing people and their growth over just pushing products or features.</span>
+                            <span class="translation-text" data-lang="hil">Ginapanginbulahan ang tawo kag ang ila paglambo — indi lang ang software.</span>
+                        </p>
                     </div>
-                    <div class="value-card">
+                    <div class="value-card" data-aos="fade-in" data-aos-delay="600">
                         <div class="value-icon">
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-users"></i>
                         </div>
-                        <h4>Service</h4>
-                        <p>We exist to serve communities, not just clients</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4>Resilience</h4>
-                        <p>We build systems that thrive even in low-resource environments</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <i class="fas fa-flag"></i>
-                        </div>
-                        <h4>Sovereignty</h4>
-                        <p>We support self-reliance in governance and technology</p>
+                        <h4>
+                            <span class="translation-text active" data-lang="en">Community over competition</span>
+                            <span class="translation-text" data-lang="hil">Komunidad, Indi Kompetensya</span>
+                        </h4>
+                        <p>
+                            <span class="translation-text active" data-lang="en">Building ecosystems, not empires. Uplifting local talent and shared learning.</span>
+                            <span class="translation-text" data-lang="hil">Ginatukod ang pagbinuligay, indi ang patun-anay. Ginapabakod ang lokal nga talento kag ginatipon ang kaalam sang tanan.</span>
+                        </p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Section 6: Life at Servio -->
-            <div class="team-section">
-                <h3 class="team-headline">A Team Built for the Provinces</h3>
-                <p class="team-description">Our team is proudly distributed — from Iloilo to Manila, Capiz to Cebu. We live where we serve. Through remote collaboration we stay grounded and connected.</p>
-                <div class="team-highlights">
-                    <div class="highlight-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Distributed across the Philippines</span>
-                    </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-users"></i>
-                        <span>Local experts in every region</span>
-                    </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-network-wired"></i>
-                        <span>Connected through modern collaboration tools</span>
-                    </div>
-                </div>
+                <p class="values-conclusion">
+                    <span class="translation-text active" data-lang="en">These values keep Servio grounded — especially when the pressure to grow fast, go proprietary, or follow trends gets loud. Like regularization in a good model, Servio keeps the mission true under pressure.</span>
+                    <span class="translation-text" data-lang="hil">Amo ini ang pundasyon sang Servio bisan pa sa mga panahon nga ginapilit sila sang kalibutan nga magmadinalag-on dayon, magpanakop sang merkado, ukon magpatuyang sa uso. Ang ila tinutuyo nagapabilin nga matinlo kag matuod-tuod.</span>
+                </p>
             </div>
         </div>
+
+        <!-- Section 5: Where Servio is Going -->
+        <div class="vision-section" data-aos="fade-up" data-aos-duration="800">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="translation-text active" data-lang="en">Where Servio is Going: A Digitally Sovereign Philippines</span>
+                    <span class="translation-text" data-lang="hil">Padulungan sang Servio: Isa ka Pilipinas nga May Gahum sa Kaugalingon nga Teknolohiya</span>
+                </h2>
+            </div>
+            <div class="vision-content">
+                <p class="vision-intro">
+                    <span class="translation-text active" data-lang="en">Servio envisions a Philippines where:</span>
+                    <span class="translation-text" data-lang="hil">Ginatan-aw sang Servio ang isa ka Pilipinas nga:</span>
+                </p>
+                <ul class="vision-list">
+                    <li>
+                        <span class="translation-text active" data-lang="en">Rural teams operate as seamlessly as global startups.</span>
+                        <span class="translation-text" data-lang="hil">Ang mga grupo sa kabukiran pareho kasanag kag kasanag sang mga kompanya sa siyudad.</span>
+                    </li>
+                    <li>
+                        <span class="translation-text active" data-lang="en">Developers in Capiz, Camiguin, Catanduanes, or any other province have the power to lead national-level platforms.</span>
+                        <span class="translation-text" data-lang="hil">Ang mga developers halin sa Capiz, Camiguin, Catanduanes, ukon bisan diin nga probinsya may kusog kag oportunidad nga mangin lider sang bug-os nga pungsod sa larang sang teknolohiya.</span>
+                    </li>
+                    <li>
+                        <span class="translation-text active" data-lang="en">Municipalities run smart, transparent systems that truly serve their constituents.</span>
+                        <span class="translation-text" data-lang="hil">Ang mga munisipyo may maayo, bukas, kag matinlo nga sistema nga naga serbisyo guid sa ila katawhan.</span>
+                    </li>
+                    <li>
+                        <span class="translation-text active" data-lang="en">Rural brands compete confidently with global brands — backed by world-class tools.</span>
+                        <span class="translation-text" data-lang="hil">Ang mga rural nga negosyo may kumpiyansa nga magpakigbato sa daku nga merkado — may gahum tungod sang maayo nga gamit.</span>
+                    </li>
+                </ul>
+                <p class="vision-conclusion">
+                    <span class="translation-text active" data-lang="en">But this vision isn't just about technology. It's about building digital ecosystems that empower provinces, connect businesses, and sustain communities.</span>
+                    <span class="translation-text" data-lang="hil">Pero ang panindugan sang Servio indi lang bahin sang teknolohiya. Isa ini ka panawagan nga magtukod sang ecosystem nga naga-ugpong sang mga banwa, naga konektar sang negosyo, kag naga pauswag sang komunidad.</span>
+                </p>
+                <p class="vision-action">
+                    <span class="translation-text active" data-lang="en">This future isn't something to wait for — It's being built now.<br>One municipality, one organization, one transformation at a time.</span>
+                    <span class="translation-text" data-lang="hil">Ini nga buwas damlag, indi dapat hulaton.<br>Ginapatuman na subong — isa ka banwa, isa ka grupo, isa ka pagbag-o kada adlaw.</span>
+                </p>
+            </div>
+        </div>
+    </div>
     </section>
 
      <!-- THE TOOLS WE TRUST -->

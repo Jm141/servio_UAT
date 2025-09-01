@@ -43,6 +43,10 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Ensure text doesn't get cut off */
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 100%;
 }
 
 /* Cursor blink effect */
@@ -843,7 +847,7 @@ h3 {
 }
 
 .hero-left-section {
-    flex: 0 0 20%;
+    flex: 0 0 30%;
     background-color: #ffffff;
     display: flex;
     align-items: flex-start;
@@ -863,11 +867,14 @@ h3 {
     line-height: 1.1;
     color: #000000;
     text-align: left;
-    max-width: 400px;
+    max-width: 600px;
+    width: 100%;
     opacity: 0;
     transform: translateX(-50px);
     transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     margin-top: -2rem;
+    position: relative;
+    min-height: 200px;
 }
 
 .hero-split-layout.animate .hero-heading {
@@ -876,12 +883,125 @@ h3 {
     transition-delay: 0.8s;
 }
 
+/* Translation Styles */
+.translation-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.translation-text.active {
+    position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Special handling for section titles */
+.section-title .translation-text {
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: none;
+    /* Ensure text is visible when active */
+    color: #667eea;
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.section-title .translation-text.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+    /* Ensure gradient styling works */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.translation-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    min-width: 60px;
+}
+
+.translation-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.translation-toggle:active {
+    transform: translateY(0);
+}
+
+.translation-toggle .toggle-text {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.translation-toggle .toggle-text:last-child {
+    opacity: 0;
+    transform: translateY(-100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.translation-toggle[data-current="hil"] .toggle-text:first-child {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.translation-toggle[data-current="hil"] .toggle-text:last-child {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* Translation animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.translation-text.active {
+    animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 
 
 
 
 .hero-right-section {
-    flex: 0 0 80%;
+    flex: 0 0 70%;
     position: relative;
     overflow: hidden;
 }
@@ -2016,8 +2136,258 @@ h3 {
     font-size: 1.2rem;
     font-weight: 600;
     color: #2c3e50;
-    margin-bottom: 0.8rem;
-    line-height: 1.3;
+}
+
+/* New About Section Structure */
+.about-section {
+    padding: 4rem 0;
+    background: #ffffff;
+    position: relative;
+}
+
+.origin-section,
+.mission-section,
+.journey-section,
+.values-section,
+.vision-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1D1D1F;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Fallback for browsers that don't support background-clip */
+    color: #667eea;
+}
+
+
+
+.origin-content,
+.mission-content,
+.journey-content,
+.values-content,
+.vision-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.origin-narrative,
+.mission-intro,
+.mission-statement,
+.mission-conclusion,
+.journey-intro,
+.journey-approach,
+.journey-tools,
+.journey-conclusion,
+.values-intro,
+.values-statement,
+.values-conclusion,
+.vision-intro,
+.vision-conclusion,
+.vision-action {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 1rem;
+}
+
+.tech-stack {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    border-left: 4px solid #667eea;
+}
+
+.tech-stack p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #495057;
+    margin-bottom: 1rem;
+}
+
+.tech-stack p:last-child {
+    margin-bottom: 0;
+}
+
+.mission-list,
+.journey-list,
+.vision-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.mission-list li,
+.journey-list li,
+.vision-list li {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.mission-list li:before,
+.journey-list li:before,
+.vision-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.origin-conclusion,
+.mission-conclusion,
+.journey-conclusion,
+.values-conclusion,
+.vision-conclusion,
+.vision-action {
+    font-weight: 600;
+    color: #1D1D1F;
+    font-size: 1.25rem;
+}
+
+.vision-action {
+    text-align: center;
+    font-style: italic;
+    color: #667eea;
+}
+
+/* Values Grid Styling */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.value-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.value-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.value-card h4 {
+    color: #1D1D1F;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.value-card p {
+    color: #4a4a4a;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Section Spacing */
+.origin-section + .mission-section,
+.mission-section + .journey-section,
+.journey-section + .values-section,
+.values-section + .vision-section {
+    border-top: 1px solid rgba(102, 126, 234, 0.1);
+    padding-top: 2rem;
+}
+
+/* About Section Translation Toggle */
+.about-translation-toggle-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-translation-toggle {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 30px;
+    padding: 1rem 2rem;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    overflow: hidden;
+    position: relative;
+    min-width: 80px;
+}
+
+.about-translation-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.about-translation-toggle:active {
+    transform: translateY(-1px);
+}
+
+.about-translation-toggle .toggle-text {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.about-translation-toggle .toggle-text:last-child {
+    opacity: 0;
+    transform: translateY(-100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.about-translation-toggle[data-current="hil"] .toggle-text:first-child {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.about-translation-toggle[data-current="hil"] .toggle-text:last-child {
+    opacity: 1;
+    transform: translate(-50%, -50%);
 }
 
 .block-description {
@@ -2045,6 +2415,65 @@ h3 {
     
     .about-title {
         font-size: 2rem;
+    }
+    
+    /* New About Section Mobile Styles */
+    .origin-section,
+    .mission-section,
+    .journey-section,
+    .values-section,
+    .vision-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    .origin-content,
+    .mission-content,
+    .journey-content,
+    .values-content,
+    .vision-content {
+        max-width: 100%;
+    }
+    
+    .tech-stack {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .about-translation-toggle {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Hero section mobile adjustments */
+    .hero-left-section {
+        flex: 0 0 100%;
+        padding: 0 1rem;
+    }
+    
+    .hero-right-section {
+        flex: 0 0 100%;
+        margin-top: 2rem;
+    }
+    
+    .hero-heading {
+        max-width: 100%;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+    .typewriter-text {
+        font-size: 2.5rem;
+        text-align: center;
     }
 }
 

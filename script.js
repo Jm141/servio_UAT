@@ -89,6 +89,46 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 4100);
 });
 
+// Translation Toggle Function for Hero
+function toggleTranslation() {
+    const englishText = document.querySelector('.hero-heading .translation-text[data-lang="en"]');
+    const hiligaynonText = document.querySelector('.hero-heading .translation-text[data-lang="hil"]');
+    const toggleButton = document.querySelector('.translation-toggle');
+    
+    if (englishText.classList.contains('active')) {
+        // Switch to Hiligaynon
+        englishText.classList.remove('active');
+        hiligaynonText.classList.add('active');
+        toggleButton.setAttribute('data-current', 'hil');
+    } else {
+        // Switch to English
+        hiligaynonText.classList.remove('active');
+        englishText.classList.add('active');
+        toggleButton.setAttribute('data-current', 'en');
+    }
+}
+
+// Translation Toggle Function for About Section
+function toggleAboutTranslation() {
+    const englishTexts = document.querySelectorAll('.about-section .translation-text[data-lang="en"]');
+    const hiligaynonTexts = document.querySelectorAll('.about-section .translation-text[data-lang="hil"]');
+    const toggleButton = document.querySelector('.about-translation-toggle');
+    
+    if (englishTexts[0].classList.contains('active')) {
+        // Switch to Hiligaynon
+        englishTexts.forEach(text => text.classList.remove('active'));
+        hiligaynonTexts.forEach(text => text.classList.add('active'));
+        toggleButton.setAttribute('data-current', 'hil');
+    } else {
+        // Switch to English
+        hiligaynonTexts.forEach(text => text.classList.remove('active'));
+        englishTexts.forEach(text => text.classList.add('active'));
+        toggleButton.setAttribute('data-current', 'en');
+    }
+}
+
+
+
 // Scroll Animation Observer
 const observerOptions = {
     threshold: 0.1,
